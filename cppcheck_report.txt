@@ -1,0 +1,2270 @@
+apps/esh/shell.c:76:9: style: The scope of the variable 'copy' can be reduced. [variableScope]
+ int i, copy;
+        ^
+apps/init.c:43:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("\nPress any key to stop vm startup: %d ", wait);
+  ^
+apps/init.c:45:4: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+   printf("\b\b%d ", wait - i);
+   ^
+apps/init.c:38:7: style: The scope of the variable 'str' can be reduced. [variableScope]
+ char str[8];
+      ^
+apps/init.c:39:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+arch/aarch64/core/arch.c:350:0: information: Skipping configuration 'CONFIG_DTB_LOAD_ADDRESS' since the value of 'CONFIG_DTB_LOAD_ADDRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+ dtb = (void *)ptov(CONFIG_DTB_LOAD_ADDRESS);
+^
+arch/aarch64/core/arm_arch_timer.c:104:6: style: Condition '!node' is always true [knownConditionTrueFalse]
+ if (!node) {
+     ^
+arch/aarch64/core/arm_arch_timer.c:99:29: note: Assignment 'node=NULL', assigned value is 0
+ struct device_node *node = NULL;
+                            ^
+arch/aarch64/core/arm_arch_timer.c:104:6: note: Condition '!node' is always true
+ if (!node) {
+     ^
+arch/aarch64/core/arm_arch_timer.c:120:6: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+ ret = of_get_u32_array(node, "clock-frequency", &cpu_khz, 1);
+     ^
+arch/aarch64/core/cpu.c:91:8: style: The scope of the variable 'addr' can be reduced. [variableScope]
+ void *addr;
+       ^
+arch/aarch64/core/stage1.c:403:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+arch/aarch64/core/stage1.c:497:7: style: Variable 'phy' is assigned a value that is never used. [unreadVariable]
+  phy = ((*pmdp) & S1_PHYSICAL_MASK) + pmd_offset;
+      ^
+arch/aarch64/virt/trap.c:69:16: style: The scope of the variable 'reg_value0' can be reduced. [variableScope]
+ unsigned long reg_value0, reg_value1;
+               ^
+arch/aarch64/virt/trap.c:69:28: style: The scope of the variable 'reg_value1' can be reduced. [variableScope]
+ unsigned long reg_value0, reg_value1;
+                           ^
+arch/aarch64/virt/trap.c:70:16: style: The scope of the variable 'reg_value' can be reduced. [variableScope]
+ unsigned long reg_value;
+               ^
+arch/aarch64/virt/vtimer.c:189:11: style: The scope of the variable 'v' can be reduced. [variableScope]
+ uint32_t v;
+          ^
+arch/aarch64/virt/vtimer.c:192:16: style: The scope of the variable 'ns' can be reduced. [variableScope]
+ unsigned long ns;
+               ^
+arch/aarch64/virt/vtimer.c:249:16: style: The scope of the variable 'ns' can be reduced. [variableScope]
+ unsigned long ns;
+               ^
+core/calltrace.c:75:8: error: Array 'buffer[512]' accessed at index 512, which is out of bounds. [arrayIndexOutOfBounds]
+ buffer[printed + 1] = 0;
+       ^
+core/calltrace.c:74:27: note: Assignment 'printed=printed>=512?511:printed', assigned value is 511
+ printed = printed >= 512 ? 511 : printed;
+                          ^
+core/calltrace.c:75:8: note: Array index out of bounds
+ buffer[printed + 1] = 0;
+       ^
+core/event.c:101:15: style: The scope of the variable 'task' can be reduced. [variableScope]
+ struct task *task;
+              ^
+core/event.c:102:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret, cnt = 0, num;
+     ^
+core/event.c:135:16: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ unsigned long flags;
+               ^
+core/event.c:104:37: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+ num = opt & OS_EVENT_OPT_BROADCAST ? 0 : 1;
+                                    ^
+core/irq.c:197:11: style: The scope of the variable 'irq' can be reduced. [variableScope]
+ uint32_t irq;
+          ^
+core/irq.c:198:19: style: The scope of the variable 'irq_desc' can be reduced. [variableScope]
+ struct irq_desc *irq_desc;
+                  ^
+core/mem_region.c:36:9: style: The scope of the variable 'r_size' can be reduced. [variableScope]
+ size_t r_size;
+        ^
+core/memory.c:103:22: portability: '(void*)sh' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  return ((void *)sh + SLAB_HEADER_SIZE);
+                     ^
+core/memory.c:131:12: portability: 'slab_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ slab_base += size;
+           ^
+core/memory.c:133:21: portability: '(void*)sh' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ((void *)sh + SLAB_HEADER_SIZE);
+                    ^
+core/mutex.c:93:21: warning: Either the condition 'task' is redundant or there is possible null pointer dereference: task. [nullPointerRedundantCheck]
+ ASSERT(m->owner == task->tid);
+                    ^
+core/mutex.c:102:6: note: Assuming that condition 'task' is not redundant
+ if (task) {
+     ^
+core/mutex.c:93:21: note: Null pointer dereference
+ ASSERT(m->owner == task->tid);
+                    ^
+core/ramdisk.c:70:21: portability: 'ramdisk_start' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ sb = ramdisk_start + RAMDISK_MAGIC_SIZE;
+                    ^
+core/ramdisk.c:71:23: portability: 'ramdisk_start' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ root = ramdisk_start + sb->inode_offset;
+                      ^
+core/ramdisk.c:72:31: portability: 'ramdisk_start' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ramdisk_data = ramdisk_start + sb->data_offset;
+                              ^
+core/ramdisk.c:113:27: portability: 'ramdisk_data' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ memcpy(buf, ramdisk_data + file->inode->f_offset + offset, size);
+                          ^
+core/sched.c:165:22: style: The scope of the variable 'tpcpu' can be reduced. [variableScope]
+ struct pcpu *pcpu, *tpcpu;
+                     ^
+core/smp.c:79:16: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ unsigned long flags;
+               ^
+core/smp.c:118:19: style: The scope of the variable 'call' can be reduced. [variableScope]
+ struct smp_call *call;
+                  ^
+core/smp.c:146:9: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int i, ret, cnt;
+        ^
+core/smp.c:147:11: style: The scope of the variable 'affinity' can be reduced. [variableScope]
+ uint64_t affinity;
+          ^
+core/smp.c:184:24: style: The scope of the variable 'cd' can be reduced. [variableScope]
+ struct smp_call_data *cd;
+                       ^
+core/string.c:274:4: style: Redundant condition: If 'align > 1', the comparison 'align' is always true. [redundantCondition]
+   PRINT_ALIGN_CHAR(str, align, 1);
+   ^
+core/string.c:218:11: style: Redundant initialization for 'str'. The initialized value is overwritten before it is read. [redundantInitialization]
+ for (str = buf; *fmt; fmt++) {
+          ^
+core/string.c:209:12: note: str is initialized
+ char *str = buf, *tmp;
+           ^
+core/string.c:218:11: note: str is overwritten
+ for (str = buf; *fmt; fmt++) {
+          ^
+core/string.c:45:7: style: The scope of the variable 'm' can be reduced. [variableScope]
+ long m, len, res;
+      ^
+core/string.c:479:14: style: The scope of the variable 'spanp' can be reduced. [variableScope]
+ const char *spanp;
+             ^
+core/string.c:480:6: style: The scope of the variable 'c' can be reduced. [variableScope]
+ int c, sc;
+     ^
+core/task.c:328:22: style: The scope of the variable 'task' can be reduced. [variableScope]
+        struct task *task;
+                     ^
+core/task.c:363:15: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ struct task *ret;
+              ^
+core/task.c:99:27: portability: 'stack' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  task->stack_top = stack + stk_size;
+                          ^
+core/task.c:305:50: portability: '(void*)ptov(minos_stack_top)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ task->stack_top = (void *)ptov(minos_stack_top) -
+                                                 ^
+drivers/console.c:119:11: style: The scope of the variable 'ridx' can be reduced. [variableScope]
+ uint32_t ridx, widx;
+          ^
+drivers/console.c:119:17: style: The scope of the variable 'widx' can be reduced. [variableScope]
+ uint32_t ridx, widx;
+                ^
+drivers/console.c:56:18: style: Local variable 'console' shadows outer variable [shadowVariable]
+ struct console *console;
+                 ^
+drivers/console.c:50:24: note: Shadowed declaration
+static struct console *console = &__console_mem_console;
+                       ^
+drivers/console.c:56:18: note: Shadow variable
+ struct console *console;
+                 ^
+drivers/console.c:97:11: style: Local variable 'widx' shadows outer variable [shadowVariable]
+ uint32_t widx;
+          ^
+drivers/console.c:27:12: note: Shadowed declaration
+static int widx;
+           ^
+drivers/console.c:97:11: note: Shadow variable
+ uint32_t widx;
+          ^
+drivers/console.c:119:17: style: Local variable 'widx' shadows outer variable [shadowVariable]
+ uint32_t ridx, widx;
+                ^
+drivers/console.c:27:12: note: Shadowed declaration
+static int widx;
+           ^
+drivers/console.c:119:17: note: Shadow variable
+ uint32_t ridx, widx;
+                ^
+drivers/iommu/ipmmu-plat.c:131:15: style: The scope of the variable 'status' can be reduced. [variableScope]
+ unsigned int status;
+              ^
+drivers/iommu/ipmmu-plat.c:108:33: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ syscimr = readl(rcar_sysc_base + SYSCIMR);
+                                ^
+drivers/iommu/ipmmu-plat.c:110:33: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(syscimr, rcar_sysc_base + SYSCIMR);
+                                ^
+drivers/iommu/ipmmu-plat.c:113:33: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(syscier, rcar_sysc_base + SYSCIER);
+                                ^
+drivers/iommu/ipmmu-plat.c:122:32: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ status = readl(rcar_sysc_base + sysc_ch->chan_offs + PWRSR_OFFS);
+                               ^
+drivers/iommu/ipmmu-plat.c:134:47: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(BIT(sysc_ch->isr_bit), rcar_sysc_base + SYSCISCR);
+                                              ^
+drivers/iommu/ipmmu-plat.c:141:29: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   if (readl(rcar_sysc_base + SYSCSR) & BIT(SYSCSR_PONENB))
+                            ^
+drivers/iommu/ipmmu-plat.c:151:25: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+         rcar_sysc_base + sysc_ch->chan_offs + PWRONCR_OFFS);
+                        ^
+drivers/iommu/ipmmu-plat.c:153:33: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  status = readl(rcar_sysc_base + sysc_ch->chan_offs + PWRER_OFFS);
+                                ^
+drivers/iommu/ipmmu-plat.c:164:28: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  if (readl(rcar_sysc_base + SYSCISR) & BIT(sysc_ch->isr_bit))
+                           ^
+drivers/iommu/ipmmu-plat.c:172:47: portability: 'rcar_sysc_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(BIT(sysc_ch->isr_bit), rcar_sysc_base + SYSCISCR);
+                                              ^
+drivers/iommu/ipmmu.c:595:6: style: Redundant initialization for 'ret'. The initialized value is overwritten before it is read. [redundantInitialization]
+ ret = of_get_u32_array(node, "iommus", iommus, ARRAY_SIZE(iommus));
+     ^
+drivers/iommu/ipmmu.c:592:10: note: ret is initialized
+ int ret = -ENODEV;
+         ^
+drivers/iommu/ipmmu.c:595:6: note: ret is overwritten
+ ret = of_get_u32_array(node, "iommus", iommus, ARRAY_SIZE(iommus));
+     ^
+drivers/iommu/ipmmu.c:648:20: warning:inconclusive: Division of result of sizeof() on pointer type. [divideSizeof]
+ num_utlbs = len / sizeof(*iommus) / 2;
+                   ^
+drivers/iommu/ipmmu.c:190:28: portability: 'mmu->base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ioread32(mmu->base + offset);
+                           ^
+drivers/iommu/ipmmu.c:195:28: portability: 'mmu->base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(data, mmu->base + offset);
+                           ^
+drivers/iommu/ipmmu.c:357:3: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+  IMTTBCR_EAE | IMTTBCR_PMB | IMTTBCR_SH0_INNER_SHAREABLE |
+  ^
+drivers/iommu/ipmmu.c:357:3: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+  IMTTBCR_EAE | IMTTBCR_PMB | IMTTBCR_SH0_INNER_SHAREABLE |
+  ^
+drivers/irq-chips/gicv2.c:84:34: portability: 'gicv2_dbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writeb_relaxed(val, gicv2_dbase + offset);
+                                 ^
+drivers/irq-chips/gicv2.c:89:34: portability: 'gicv2_dbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(val, gicv2_dbase + offset);
+                                 ^
+drivers/irq-chips/gicv2.c:94:35: portability: 'gicv2_dbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return readl_relaxed(gicv2_dbase + offset);
+                                  ^
+drivers/irq-chips/gicv2.c:99:34: portability: 'gicv2_cbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(val, gicv2_cbase + offset);
+                                 ^
+drivers/irq-chips/gicv2.c:104:35: portability: 'gicv2_cbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return readl_relaxed(gicv2_cbase + offset);
+                                  ^
+drivers/irq-chips/gicv2.c:109:34: portability: 'gicv2_hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(val, gicv2_hbase + offset);
+                                 ^
+drivers/irq-chips/gicv2.c:114:35: portability: 'gicv2_hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return readl_relaxed(gicv2_hbase + offset);
+                                  ^
+drivers/irq-chips/gicv2.c:387:15: portability: 'gicv2_cbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  gicv2_cbase += 0xf000;
+              ^
+drivers/irq-chips/gicv2.c:280:27: error: Signed integer overflow for expression '0x90<<24'. [integerOverflow]
+  writel_gicd(GIC_PRI_IPI << 24 | GIC_PRI_IPI << 16 |
+                          ^
+drivers/irq-chips/gicv2.c:286:27: error: Signed integer overflow for expression '0xa0<<24'. [integerOverflow]
+  writel_gicd(GIC_PRI_IRQ << 24 | GIC_PRI_IRQ << 16 |
+                          ^
+drivers/irq-chips/gicv2.c:342:27: error: Signed integer overflow for expression '0xa0<<24'. [integerOverflow]
+  writel_gicd(GIC_PRI_IRQ << 24 | GIC_PRI_IRQ << 16 |
+                          ^
+drivers/irq-chips/gicv3.c:112:11: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ uint32_t offset, bit;
+          ^
+drivers/irq-chips/gicv3.c:112:19: style: The scope of the variable 'bit' can be reduced. [variableScope]
+ uint32_t offset, bit;
+                  ^
+drivers/irq-chips/gicv3.c:189:11: style: The scope of the variable 'value' can be reduced. [variableScope]
+ uint64_t value;
+          ^
+drivers/irq-chips/gicv3.c:50:28: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (ioread32(gicd_base + GICD_CTLR) & (1 << 31));
+                           ^
+drivers/irq-chips/gicv3.c:91:28: portability: '(void*)gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  base = (void *)gicd_base + GICD_ICFGR + (irq / 16) * 4;
+                           ^
+drivers/irq-chips/gicv3.c:93:34: portability: '(void*)get_cpu_var(gicr_sgi_base)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  base = (void *)gicr_sgi_base() + GICR_ICFGR1;
+                                 ^
+drivers/irq-chips/gicv3.c:117:47: portability: '(void*)get_cpu_var(gicr_sgi_base)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(BIT(irq), (void *)gicr_sgi_base() + GICR_ICPENDR0);
+                                              ^
+drivers/irq-chips/gicv3.c:122:41: portability: '(void*)gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(BIT(bit), (void *)gicd_base + \
+                                        ^
+drivers/irq-chips/gicv3.c:136:26: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite8(pr, gicd_base + GICD_IPRIORITYR + irq);
+                         ^
+drivers/irq-chips/gicv3.c:151:32: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite64(affinity, gicd_base + GICD_IROUTER + irq * 8);
+                               ^
+drivers/irq-chips/gicv3.c:244:29: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(mask, gicd_base + GICD_ICENABLER + (irq / 32) * 4);
+                            ^
+drivers/irq-chips/gicv3.c:260:29: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(mask, gicd_base + GICD_ISENABLER + (irq / 32) * 4);
+                            ^
+drivers/irq-chips/gicv3.c:281:14: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = base + GICR_ICENABLER + (irq / 32) * 4;
+             ^
+drivers/irq-chips/gicv3.c:302:14: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = base + GICR_ISENABLER + (irq / 32) * 4;
+             ^
+drivers/irq-chips/gicv3.c:459:26: portability: '__gicr_rd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  rbase = __gicr_rd_base + (128 * 1024) * i;
+                         ^
+drivers/irq-chips/gicv3.c:461:41: portability: 'rbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  get_per_cpu(gicr_sgi_base, i) = rbase + (64 * 1024);
+                                        ^
+drivers/irq-chips/gicv3.c:467:25: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0, gicd_base + GICD_CTLR);
+                        ^
+drivers/irq-chips/gicv3.c:469:28: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ type = ioread32(gicd_base + GICD_TYPER);
+                           ^
+drivers/irq-chips/gicv3.c:475:26: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, gicd_base + GICD_ICFGR + (i / 16) * 4);
+                         ^
+drivers/irq-chips/gicv3.c:480:27: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(pr, gicd_base + GICD_IPRIORITYR + (i / 4) * 4);
+                          ^
+drivers/irq-chips/gicv3.c:481:27: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  pr = ioread32(gicd_base + GICD_IPRIORITYR + (i / 4) * 4);
+                          ^
+drivers/irq-chips/gicv3.c:486:35: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0xffffffff, gicd_base + GICD_ICENABLER + (i / 32) *4);
+                                  ^
+drivers/irq-chips/gicv3.c:490:35: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0xffffffff, gicd_base + GICD_IGROUPR + (i / 32) *4);
+                                  ^
+drivers/irq-chips/gicv3.c:496:32: portability: 'gicd_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   GICD_CTLR_ARE_NS, gicd_base + GICD_CTLR);
+                               ^
+drivers/irq-chips/gicv3.c:50:46: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+ while (ioread32(gicd_base + GICD_CTLR) & (1 << 31));
+                                             ^
+drivers/irq-chips/gicv3.c:55:51: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+ while (ioread32(gicr_rd_base() + GICR_CTLR) & (1 << 31));
+                                                  ^
+drivers/irq-chips/gicv3.c:148:18: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+ affinity &= ~(1 << 31); //GICD_IROUTER_SPI_MODE_ANY
+                 ^
+drivers/irq-chips/gicv3.c:50:46: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+ while (ioread32(gicd_base + GICD_CTLR) & (1 << 31));
+                                             ^
+drivers/irq-chips/gicv3.c:55:51: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+ while (ioread32(gicr_rd_base() + GICR_CTLR) & (1 << 31));
+                                                  ^
+drivers/irq-chips/gicv3.c:148:18: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+ affinity &= ~(1 << 31); //GICD_IROUTER_SPI_MODE_ANY
+                 ^
+drivers/irq-chips/gicv3.c:392:13: error: Signed integer overflow for expression '0x90<<24'. [integerOverflow]
+ pr = (0x90 << 24) | (0x90 << 16) | (0x90 << 8) | 0x90;
+            ^
+drivers/irq-chips/gicv3.c:396:13: error: Signed integer overflow for expression '0xa0<<24'. [integerOverflow]
+ pr = (0xa0 << 24) | (0xa0 << 16) | (0xa0 << 8) | 0xa0;
+            ^
+drivers/irq-chips/gicv3.c:479:14: error: Signed integer overflow for expression '0xa0<<24'. [integerOverflow]
+  pr = (0xa0 << 24) | (0xa0 << 16) | (0xa0 << 8) | 0xa0;
+             ^
+drivers/irq-chips/gicv3.c:377:41: error: Signed integer overflow for expression '0xff<<24'. [integerOverflow]
+ write_sysreg32(GICH_VMCR_VENG1 | (0xff << 24), ICH_VMCR_EL2);
+                                        ^
+drivers/irq-chips/irq-bcm2836.c:108:36: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ stat = readl_relaxed(bcm2836_base + LOCAL_IRQ_PENDING0 + 4 * cpu);
+                                   ^
+drivers/irq-chips/irq-bcm2836.c:119:27: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  mailbox0 = bcm2836_base + LOCAL_MAILBOX0_CLR0 + 16 * cpu;
+                          ^
+drivers/irq-chips/irq-bcm2836.c:155:27: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ void *reg = bcm2836_base + reg_offset + 4 * cpu;
+                          ^
+drivers/irq-chips/irq-bcm2836.c:155:40: portability: 'bcm2836_base+reg_offset' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ void *reg = bcm2836_base + reg_offset + 4 * cpu;
+                                       ^
+drivers/irq-chips/irq-bcm2836.c:164:27: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ void *reg = bcm2836_base + reg_offset + 4 * cpu;
+                          ^
+drivers/irq-chips/irq-bcm2836.c:164:40: portability: 'bcm2836_base+reg_offset' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ void *reg = bcm2836_base + reg_offset + 4 * cpu;
+                                       ^
+drivers/irq-chips/irq-bcm2836.c:191:41: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  writel_relaxed(1 << cpu, bcm2836_base + LOCAL_PM_ROUTING_CLR);
+                                        ^
+drivers/irq-chips/irq-bcm2836.c:220:41: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  writel_relaxed(1 << cpu, bcm2836_base + LOCAL_PM_ROUTING_SET);
+                                        ^
+drivers/irq-chips/irq-bcm2836.c:257:37: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ void *mailbox0_base = bcm2836_base + LOCAL_MAILBOX0_SET0;
+                                    ^
+drivers/irq-chips/irq-bcm2836.c:268:43: portability: 'mailbox0_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   writel_relaxed(1 << sgi, mailbox0_base + 16 * c);
+                                          ^
+drivers/irq-chips/irq-bcm2836.c:273:42: portability: 'mailbox0_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  writel_relaxed(1 << sgi, mailbox0_base +
+                                         ^
+drivers/irq-chips/irq-bcm2836.c:279:43: portability: 'mailbox0_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   writel_relaxed(1 << sgi, mailbox0_base + 16 * c);
+                                          ^
+drivers/irq-chips/irq-bcm2836.c:348:33: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(0, bcm2836_base + LOCAL_CONTROL);
+                                ^
+drivers/irq-chips/irq-bcm2836.c:349:48: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(ptov(0x80000000), bcm2836_base + LOCAL_PRESCALER);
+                                               ^
+drivers/irq-chips/irq-bcm2836.c:359:33: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(1, bcm2836_base + LOCAL_MAILBOX_INT_CONTROL0);
+                                ^
+drivers/irq-chips/irq-bcm2836.c:360:33: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(1, bcm2836_base + LOCAL_MAILBOX_INT_CONTROL0 + 0x4);
+                                ^
+drivers/irq-chips/irq-bcm2836.c:361:33: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(1, bcm2836_base + LOCAL_MAILBOX_INT_CONTROL0 + 0x8);
+                                ^
+drivers/irq-chips/irq-bcm2836.c:362:33: portability: 'bcm2836_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(1, bcm2836_base + LOCAL_MAILBOX_INT_CONTROL0 + 0xc);
+                                ^
+drivers/irq-chips/irq-bcm2836.c:368:26: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  intc.pending[b] = base + reg_pending[b];
+                         ^
+drivers/irq-chips/irq-bcm2836.c:369:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  intc.enable[b] = base + reg_enable[b];
+                        ^
+drivers/irq-chips/irq-bcm2836.c:370:26: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  intc.disable[b] = base + reg_disable[b];
+                         ^
+drivers/irq-chips/irq-bcm2836.c:47:21: style: struct member 'armctrl_ic::domain' is never used. [unusedStructMember]
+ struct irq_domain *domain;
+                    ^
+drivers/irq-chips/irq-bcm2836.c:48:8: style: struct member 'armctrl_ic::local_base' is never used. [unusedStructMember]
+ void *local_base;
+       ^
+drivers/of/of.c:216:9: warning: Either the condition '!str' is redundant or there is possible null pointer dereference: str. [nullPointerRedundantCheck]
+ memset(str, 0, len);
+        ^
+drivers/of/of.c:218:12: note: Assuming that condition '!str' is not redundant
+ if (!s || !str || (length == 0))
+           ^
+drivers/of/of.c:216:9: note: Null pointer dereference
+ memset(str, 0, len);
+        ^
+drivers/of/of.c:417:15: warning: Either the condition '!pnode' is redundant or there is possible null pointer dereference: pnode. [nullPointerRedundantCheck]
+ void *data = pnode->data;
+              ^
+drivers/of/of.c:419:6: note: Assuming that condition '!pnode' is not redundant
+ if (!pnode)
+     ^
+drivers/of/of.c:417:15: note: Null pointer dereference
+ void *data = pnode->data;
+              ^
+drivers/of/of.c:32:14: style: The scope of the variable 'node' can be reduced. [variableScope]
+ int offset, node, i, len;
+             ^
+drivers/of/of.c:87:11: style: The scope of the variable 'v' can be reduced. [variableScope]
+ fdt32_t *v;
+          ^
+drivers/of/of.c:107:11: style: The scope of the variable 'v' can be reduced. [variableScope]
+ fdt32_t *v;
+          ^
+drivers/of/of.c:152:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+drivers/of/of.c:523:11: style: The scope of the variable 'ip' can be reduced. [variableScope]
+ fdt32_t *ip;
+          ^
+drivers/of/of.c:540:11: style: The scope of the variable 'ip' can be reduced. [variableScope]
+ fdt32_t *ip;
+          ^
+drivers/of/of.c:955:20: style: The scope of the variable 'module' can be reduced. [variableScope]
+ struct module_id *module;
+                   ^
+drivers/of/of.c:969:5: portability: 's' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  s += sizeof(struct module_id);
+    ^
+drivers/of/of_mm.c:78:16: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int count, i, ret;
+               ^
+drivers/of/of_mm.c:109:14: style: The scope of the variable 'type' can be reduced. [variableScope]
+ const char *type;
+             ^
+drivers/serial/serial_bcm283x_mu.c:44:32: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (!(ioread32(serial_base + AUX_MU_LSR) &
+                               ^
+drivers/serial/serial_bcm283x_mu.c:47:27: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(c, serial_base + AUX_MU_IO);
+                          ^
+drivers/serial/serial_bcm283x_mu.c:60:29: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ if (!(ioread32(serial_base + AUX_MU_LSR) &
+                            ^
+drivers/serial/serial_bcm283x_mu.c:64:30: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ioread32(serial_base + AUX_MU_IO);
+                             ^
+drivers/serial/serial_mvebu_a3700.c:41:23: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (ioread32(base + UART_STATUS_REG) & UART_STATUS_TXFIFO_FULL);
+                      ^
+drivers/serial/serial_mvebu_a3700.c:43:21: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(ch, base + UART_TX_REG);
+                    ^
+drivers/serial/serial_mvebu_a3700.c:56:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (!(ioread32(base + UART_STATUS_REG) & UART_STATUS_RX_RDY));
+                        ^
+drivers/serial/serial_mvebu_a3700.c:58:23: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ioread32(base + UART_RX_REG) & 0xff;
+                      ^
+drivers/serial/serial_mvebu_a3700.c:67:57: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(CONFIG_UART_BASE_CLOCK / baudrate / 16, base + UART_BAUD_REG);
+                                                        ^
+drivers/serial/serial_mvebu_a3700.c:73:20: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0, base + UART_POSSR_REG);
+                   ^
+drivers/serial/serial_pl011.c:42:22: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0x0, base + UARTCR);
+                     ^
+drivers/serial/serial_pl011.c:43:22: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0x0, base + UARTECR);
+                     ^
+drivers/serial/serial_pl011.c:44:141: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0x0 | PL011_LCR_WORD_LENGTH_8 | \
+                                                                                                                                            ^
+drivers/serial/serial_pl011.c:49:26: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(divider, base + UARTIBRD);
+                         ^
+drivers/serial/serial_pl011.c:50:27: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(fraction, base + UARTFBRD);
+                          ^
+drivers/serial/serial_pl011.c:52:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(INT_RX, base + UARTIMSC); // enable rx interrupt.
+                        ^
+drivers/serial/serial_pl011.c:54:41: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(PL011_ICR_CLR_ALL_IRQS, base + UARTICR);
+                                        ^
+drivers/serial/serial_pl011.c:55:97: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0x0 | PL011_CR_UART_ENABLE | \
+                                                                                                ^
+drivers/serial/serial_pl011.c:71:29: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ int_status = ioread32(base + UARTMIS);
+                            ^
+drivers/serial/serial_pl011.c:75:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(INT_RX, base + UARTICR);
+                        ^
+drivers/serial/serial_pl011.c:76:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (!(ioread32(base + UARTFR) & PL011_FR_RXFE_FLAG)) {
+                        ^
+drivers/serial/serial_pl011.c:77:30: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  buf[cnt++] = ioread32(base + UARTDR) & 0xff;
+                             ^
+drivers/serial/serial_pl011.c:87:20: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(0, base + UARTECR);
+                   ^
+drivers/serial/serial_pl011.c:105:23: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (ioread32(base + UARTFR) & PL011_FR_BUSY_FLAG);
+                      ^
+drivers/serial/serial_pl011.c:108:24: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32('\r', base + UARTDR);
+                       ^
+drivers/serial/serial_pl011.c:110:20: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(c, base + UARTDR);
+                   ^
+drivers/serial/serial_pl011.c:115:23: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ while (ioread32(base + UARTFR) & PL011_FR_BUSY_FLAG);
+                      ^
+drivers/serial/serial_pl011.c:117:23: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return ioread32(base + UARTDR);
+                      ^
+drivers/serial/serial_scif.c:21:32: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    while (!(readw(serial_base + SCIF_SCFSR) & SCFSR_TEND))
+                               ^
+drivers/serial/serial_scif.c:24:27: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    writeb(c, serial_base + SCIF_SCFTDR);
+                          ^
+drivers/serial/serial_scif.c:26:30: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    writew(readw(serial_base + SCIF_SCFSR) & ~SCFSR_TEND,
+                             ^
+drivers/serial/serial_scif.c:27:24: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+           serial_base + SCIF_SCFSR);
+                       ^
+drivers/serial/serial_scif.c:41:29: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    if (!(readw(serial_base + SCIF_SCFSR) & (SCFSR_DR | SCFSR_RDF)))
+                            ^
+drivers/serial/serial_scif.c:44:32: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    char c = readb(serial_base + SCIF_SCFRDR);
+                               ^
+drivers/serial/serial_scif.c:46:23: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    readw(serial_base + SCIF_SCFSR);
+                      ^
+drivers/serial/serial_scif.c:49:49: portability: 'serial_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+    writew(~(SCFSR_DR | SCFSR_RDF), serial_base + SCIF_SCFSR);
+                                                ^
+generic/minos-linux-driver/minos.c:99:1: warning: %llx in format string (no. 1) requires 'unsigned long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+VM_INFO_SHOW(mem_base, "0x%llx\n")
+^
+generic/minos-linux-driver/minos.c:100:1: warning: %llx in format string (no. 1) requires 'unsigned long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+VM_INFO_SHOW(flags, "0x%llx\n")
+^
+generic/minos-linux-driver/minos.c:101:1: warning: %llx in format string (no. 1) requires 'unsigned long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+VM_INFO_SHOW(mem_size, "0x%llx\n")
+^
+generic/minos-linux-driver/minos.c:102:1: warning: %llx in format string (no. 1) requires 'unsigned long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+VM_INFO_SHOW(entry, "0x%llx\n")
+^
+generic/minos-linux-driver/minos.c:103:1: warning: %llx in format string (no. 1) requires 'unsigned long long' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+VM_INFO_SHOW(setup_data, "0x%llx\n")
+^
+generic/minos-linux-driver/minos.c:122:2: warning: %d in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+ sscanf(buf, "%d", &level);
+ ^
+generic/minos-linux-driver/minos.c:272:29: warning: Either the condition 'vm==NULL' is redundant or there is possible null pointer dereference: vm. [nullPointerRedundantCheck]
+ pr_info("release vm-%d\n", vm->vmid);
+                            ^
+generic/minos-linux-driver/minos.c:274:10: note: Assuming that condition 'vm==NULL' is not redundant
+ if ((vm == NULL) && (vm->owner != current)) {
+         ^
+generic/minos-linux-driver/minos.c:272:29: note: Null pointer dereference
+ pr_info("release vm-%d\n", vm->vmid);
+                            ^
+generic/minos-linux-driver/minos.c:274:23: warning: Either the condition 'vm==NULL' is redundant or there is possible null pointer dereference: vm. [nullPointerRedundantCheck]
+ if ((vm == NULL) && (vm->owner != current)) {
+                      ^
+generic/minos-linux-driver/minos.c:274:10: note: Assuming that condition 'vm==NULL' is not redundant
+ if ((vm == NULL) && (vm->owner != current)) {
+         ^
+generic/minos-linux-driver/minos.c:274:23: note: Null pointer dereference
+ if ((vm == NULL) && (vm->owner != current)) {
+                      ^
+generic/minos-linux-driver/minos.c:749:29: warning: Either the condition '!vm' is redundant or there is possible null pointer dereference: vm. [nullPointerRedundantCheck]
+ unsigned long align_mask = vm->guest_page_size - 1;
+                            ^
+generic/minos-linux-driver/minos.c:751:6: note: Assuming that condition '!vm' is not redundant
+ if (!vm || (vm->owner != current)) {
+     ^
+generic/minos-linux-driver/minos.c:749:29: note: Null pointer dereference
+ unsigned long align_mask = vm->guest_page_size - 1;
+                            ^
+generic/minos-linux-driver/minos.c:615:9: style: The scope of the variable 'ptep' can be reduced. [variableScope]
+ pmd_t *ptep;
+        ^
+generic/minos-linux-driver/minos.c:616:9: style: The scope of the variable 'count' can be reduced. [variableScope]
+ int i, count;
+        ^
+generic/minos-linux-driver/minos.c:618:16: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ unsigned long offset, mmap_base, addr;
+               ^
+generic/minos-linux-driver/minos.c:703:9: style: The scope of the variable 'ptep' can be reduced. [variableScope]
+ pte_t *ptep;
+        ^
+generic/minos-linux-driver/minos.c:705:9: style: The scope of the variable 'count' can be reduced. [variableScope]
+ int i, count;
+        ^
+generic/minos-linux-driver/minos.c:706:16: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ unsigned long offset, mmap_base, addr;
+               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:209:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:222:13: style: The scope of the variable 'bit' can be reduced. [variableScope]
+ int event, bit;
+            ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:307:26: style: The scope of the variable 'vq' can be reduced. [variableScope]
+ struct vmbox_virtqueue *vq;
+                         ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:134:48: style:inconclusive: Function 'vmbox_register_device' argument 1 names different: declaration 'dev' definition 'vdev'. [funcArgNamesDifferent]
+int vmbox_register_device(struct vmbox_device *vdev)
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.h:141:48: note: Function 'vmbox_register_device' argument 1 names different: declaration 'dev' definition 'vdev'.
+int vmbox_register_device(struct vmbox_device *dev);
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:134:48: note: Function 'vmbox_register_device' argument 1 names different: declaration 'dev' definition 'vdev'.
+int vmbox_register_device(struct vmbox_device *vdev)
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:152:48: style:inconclusive: Function 'vmbox_register_driver' argument 1 names different: declaration 'drv' definition 'driver'. [funcArgNamesDifferent]
+int vmbox_register_driver(struct vmbox_driver *driver)
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.h:142:48: note: Function 'vmbox_register_driver' argument 1 names different: declaration 'drv' definition 'driver'.
+int vmbox_register_driver(struct vmbox_driver *drv);
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:152:48: note: Function 'vmbox_register_driver' argument 1 names different: declaration 'drv' definition 'driver'.
+int vmbox_register_driver(struct vmbox_driver *driver)
+                                               ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:187:25: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->data_base = base + VMBOX_IPC_ALL_ENTRY_SIZE;
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:190:50: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vdev->ipc_in = (struct vmbox_ipc_entry *)(base +
+                                                 ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:194:51: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vdev->ipc_out = (struct vmbox_ipc_entry *)(base +
+                                                  ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:227:29: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  event = readl(vdev->iomem + VMBOX_DEV_IPC_TYPE);
+                            ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:232:28: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ event = readl(vdev->iomem + VMBOX_DEV_IPC_TYPE);
+                           ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:339:24: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(1, vdev->iomem + VMBOX_DEV_VRING_EVENT);
+                       ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:348:28: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(event, vdev->iomem + VMBOX_DEV_IPC_EVENT);
+                           ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:368:24: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(1, vdev->iomem + VMBOX_DEV_VDEV_ONLINE);
+                       ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:282:25: warning: Either the condition '!vc' is redundant or there is possible null pointer dereference: vc. [nullPointerRedundantCheck]
+ struct vm_ring *ring = vc->rx;
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:286:6: note: Assuming that condition '!vc' is not redundant
+ if (!vc || vc->type != HVC_DEBUG_CONSOLE)
+     ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:282:25: note: Null pointer dereference
+ struct vm_ring *ring = vc->rx;
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:472:21: style: The scope of the variable 'hp' can be reduced. [variableScope]
+ struct hvc_struct *hp;
+                    ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:211:36: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vc->rx = (struct vm_ring *)(base + header_size + BUF_0_SIZE);
+                                   ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:211:50: portability: 'base+header_size' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vc->rx = (struct vm_ring *)(base + header_size + BUF_0_SIZE);
+                                                 ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:214:36: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vc->tx = (struct vm_ring *)(base + header_size + BUF_0_SIZE);
+                                   ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:214:50: portability: 'base+header_size' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vc->tx = (struct vm_ring *)(base + header_size + BUF_0_SIZE);
+                                                 ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:230:37: portability: '(void*)vc->tx' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vdev->vring_va = ((void *)vc->tx) - VMBOX_IPC_ALL_ENTRY_SIZE;
+                                    ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:532:39: portability: 'console_ring' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vmbox_vm_ring_setup(vc, console_ring +
+                                      ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:570:35: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vc->tx = (struct vm_ring *)(base +
+                                  ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:571:27: portability: 'base+sizeof(struct vm_ring)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   sizeof(struct vm_ring) + BUF_1_SIZE);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_console.c:614:6: style: Variable 'vc' is assigned a value that is never used. [unreadVariable]
+  vc = create_vm_debug_console();
+     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:146:11: style: The scope of the variable 'new_state' can be reduced. [variableScope]
+ uint32_t new_state;
+          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:147:27: style: Local variable 'vcon' shadows outer variable [shadowVariable]
+ struct vmbox_controller *vcon = platform_get_drvdata(data);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:44:33: note: Shadowed declaration
+static struct vmbox_controller *vcon;
+                                ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:147:27: note: Shadow variable
+ struct vmbox_controller *vcon = platform_get_drvdata(data);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:172:27: style: Local variable 'vcon' shadows outer variable [shadowVariable]
+ struct vmbox_controller *vcon = platform_get_drvdata(pdev);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:44:33: note: Shadowed declaration
+static struct vmbox_controller *vcon;
+                                ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:172:27: note: Shadow variable
+ struct vmbox_controller *vcon = platform_get_drvdata(pdev);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:50:36: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->nr_vqs = readl(vdev->iomem  + VMBOX_DEV_VQS);
+                                   ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:51:38: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->vring_num = readl(vdev->iomem + VMBOX_DEV_VRING_NUM);
+                                     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:52:39: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->vring_size = readl(vdev->iomem + VMBOX_DEV_VRING_SIZE);
+                                      ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:53:38: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->vring_irq = readl(vdev->iomem + VMBOX_DEV_VRING_IRQ);
+                                     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:54:38: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->event_irq = readl(vdev->iomem + VMBOX_DEV_IPC_IRQ);
+                                     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:55:43: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->vring_mem_size = readl(vdev->iomem + VMBOX_DEV_MEM_SIZE);
+                                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:56:27: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ high = readl(vdev->iomem + VMBOX_DEV_VRING_BASE_HI);
+                          ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:57:26: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ low = readl(vdev->iomem + VMBOX_DEV_VRING_BASE_LOW);
+                         ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:63:38: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->id.device = readl(vdev->iomem + VMBOX_DEV_DEVICE_ID);
+                                     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:64:38: portability: 'vdev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vdev->id.vendor = readl(vdev->iomem + VMBOX_DEV_VENDOR_ID);
+                                     ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:95:28: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ dev_reg = vcon->con_iomem + VMBOX_CON_DEV_BASE +
+                           ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:95:49: portability: 'vcon->con_iomem+0x100' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ dev_reg = vcon->con_iomem + VMBOX_CON_DEV_BASE +
+                                                ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:97:24: portability: 'dev_reg' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ value = readl(dev_reg + VMBOX_DEV_ID);
+                       ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:123:45: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ uint32_t new_state = readl(vcon->con_iomem + VMBOX_CON_DEV_STAT);
+                                            ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:150:37: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  new_state = readl(vcon->con_iomem + VMBOX_CON_DEV_STAT);
+                                    ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:175:32: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ value = readl(vcon->con_iomem + VMBOX_CON_INT_STATUS);
+                               ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:179:32: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(value, vcon->con_iomem + VMBOX_CON_INT_STATUS);
+                               ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:209:39: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vcon->device_iomem = vcon->con_iomem + VMBOX_CON_DEV_BASE;
+                                      ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:241:28: portability: 'vcon->con_iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel(1, vcon->con_iomem + VMBOX_CON_ONLINE);
+                           ^
+generic/minos-linux-driver/vmbox/vmbox_controller.c:56:7: style: Variable 'high' is assigned a value that is never used. [unreadVariable]
+ high = readl(vdev->iomem + VMBOX_DEV_VRING_BASE_HI);
+      ^
+generic/minos-linux-driver/vmbox/vmbox_veth.c:284:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:104:9: style: The scope of the variable 'id' can be reduced. [variableScope]
+ int i, id, x, y;
+        ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:553:6: style: The scope of the variable 'index' can be reduced. [variableScope]
+ int index;
+     ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:118:30: portability: 'vq->vring_buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vbuf->addr = vq->vring_buf + vq->vring_size * id;
+                             ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:169:28: portability: 'vq->vring_buf' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ buf->addr = vq->vring_buf + desc->addr * vq->vring_size;
+                           ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:576:25: portability: 'vdev->data_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return vdev->data_base + index * size;
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:587:25: portability: 'vdev->data_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = vdev->data_base + total_size;
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:588:7: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base += (vdev->vring_size * vdev->vring_num) * index;
+      ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:613:25: portability: 'vring_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vq->avail = vring_base +
+                        ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:615:24: portability: 'vring_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vq->used = vring_base +
+                       ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:616:55: portability: 'vring_base+vmbox_virtq_vring_desc_size(num,8)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vmbox_virtq_vring_desc_size(num, VMBOX_VRING_ALIGN) +
+                                                      ^
+generic/minos-linux-driver/vtcon_early_printk.c:17:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i, nr;
+     ^
+generic/minos-linux-driver/vtcon_early_printk.c:17:9: style: The scope of the variable 'nr' can be reduced. [variableScope]
+ int i, nr;
+        ^
+generic/minos-linux-driver/vtcon_early_printk.c:18:11: style: The scope of the variable 'tmp' can be reduced. [variableScope]
+ uint32_t tmp;
+          ^
+generic/minos-linux-driver/vtcon_early_printk.c:19:11: style: The scope of the variable 'write_ch' can be reduced. [variableScope]
+ uint32_t write_ch = 0;
+          ^
+generic/minos-linux-driver/vtcon_early_printk.c:27:17: portability: 'early_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ p = early_base + VIRTIO_MMIO_CONFIG;
+                ^
+generic/minos-linux-driver/vtcon_early_printk.c:29:34: portability: 'early_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = readl_relaxed(early_base + VIRTIO_MMIO_DEVICE_ID);
+                                 ^
+generic/minos-linux-driver/vtcon_early_printk.c:35:32: portability: 'early_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  writel_relaxed(0, early_base + VIRTIO_MMIO_DEVICE_FEATURES_SEL);
+                               ^
+generic/minos-linux-driver/vtcon_early_printk.c:36:34: portability: 'early_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = readl_relaxed(early_base + VIRTIO_MMIO_DEVICE_FEATURES);
+                                 ^
+libs/libfdt/fdt_overlay.c:698:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+libs/libfdt/fdt_overlay.c:741:40: style: The scope of the variable 'fragment' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                       ^
+libs/libfdt/fdt_overlay.c:741:50: style: The scope of the variable 'target' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                                 ^
+libs/libfdt/fdt_overlay.c:742:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+     ^
+libs/libfdt/fdt_overlay.c:742:11: style: The scope of the variable 'frag_name_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+          ^
+libs/libfdt/fdt_overlay.c:742:26: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                         ^
+libs/libfdt/fdt_overlay.c:742:31: style: The scope of the variable 'rel_path_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                              ^
+libs/libfdt/fdt_overlay.c:746:14: style: The scope of the variable 'frag_name' can be reduced. [variableScope]
+ const char *frag_name;
+             ^
+libs/libfdt/fdt_overlay.c:747:14: style: The scope of the variable 'rel_path' can be reduced. [variableScope]
+ const char *rel_path;
+             ^
+libs/libfdt/fdt_overlay.c:749:8: style: The scope of the variable 'buf' can be reduced. [variableScope]
+ char *buf;
+       ^
+libs/libfdt/fdt_ro.c:659:14: style: The scope of the variable 'val' can be reduced. [variableScope]
+ const void *val;
+             ^
+libs/libfdt/fdt_ro.c:839:14: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int offset, err;
+             ^
+libs/libfdt/fdt_ro.c:865:6: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ int offset, nextoffset = 0;
+     ^
+libs/libfdt/fdt_ro.c:866:11: style: The scope of the variable 'tag' can be reduced. [variableScope]
+ uint32_t tag;
+          ^
+libs/libfdt/fdt_rw.c:102:20: warning: Invalid test for overflow '(p+oldlen)<p'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'oldlen<0'. [invalidTestForOverflow]
+ if (((p + oldlen) < p) || ((p + oldlen) > end))
+                   ^
+libs/libfdt/fdt_rw.c:309:19: style: The scope of the variable 'newlen' can be reduced. [variableScope]
+ int err, oldlen, newlen;
+                  ^
+libs/libfdt/fdt_rw.c:431:6: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int err;
+     ^
+libs/libfdt/fdt_wip.c:119:41: style:inconclusive: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'. [funcArgNamesDifferent]
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+libs/libfdt/libfdt_internal.h:69:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int nodeoffset);
+                                        ^
+libs/libfdt/fdt_wip.c:119:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+libs/shell_command/task_cmd.c:54:15: style: The scope of the variable 'vcpu' can be reduced. [variableScope]
+ struct vcpu *vcpu;
+              ^
+platform/amlogic/amlogic_smc.c:91:16: warning: Either the condition 'id>(0x82000000+128)' is redundant or the array 'amlogic_smc_fn[128]' is accessed at index 128, which is out of bounds. [arrayIndexOutOfBoundsCond]
+ amlogic_smc_fn[id - AMLOGIC_SMC_BASE] = fn;
+               ^
+platform/amlogic/amlogic_smc.c:88:37: note: Assuming that condition 'id>(0x82000000+128)' is not redundant
+ if ((id < AMLOGIC_SMC_BASE) || (id > AMLOGIC_SMC_END))
+                                    ^
+platform/amlogic/amlogic_smc.c:91:16: note: Array index out of bounds
+ amlogic_smc_fn[id - AMLOGIC_SMC_BASE] = fn;
+               ^
+platform/raspberry4/raspberry4.c:207:16: style: The scope of the variable 'base' can be reduced. [variableScope]
+ unsigned long base, size;
+               ^
+platform/raspberry4/raspberry4.c:207:22: style: The scope of the variable 'size' can be reduced. [variableScope]
+ unsigned long base, size;
+                     ^
+platform/raspberry4/raspberry4.c:83:17: style: The scope of the variable 'node' can be reduced. [variableScope]
+ int i, offset, node;
+                ^
+platform/raspberry4/raspberry4.c:88:15: style: The scope of the variable 'vdev' can be reduced. [variableScope]
+ struct vdev *vdev;
+              ^
+tools/fdt_parse/fdt_parse.c:1098:3: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("[VIRQ] %d->%d %s\n", irq, hw_irq, node->name);
+  ^
+tools/fdt_parse/fdt_parse.c:1098:3: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+  printf("[VIRQ] %d->%d %s\n", irq, hw_irq, node->name);
+  ^
+tools/fdt_parse/fdt_parse.c:1194:3: portability: %lx in format string (no. 2) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+  printf("[IOMEM] start: 0x%lx size: 0x%lx\n",
+  ^
+tools/fdt_parse/fdt_parse.c:1196:9: portability: %lx in format string (no. 5) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+  ret = sprintf(buf, "<0x%lx 0x%lx 0x%lx 0x%lx 0x%lx 0x%lx>, /* 0x%lx ----> 0x%lx */\n",
+        ^
+tools/fdt_parse/fdt_parse.c:1196:9: portability: %lx in format string (no. 6) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+  ret = sprintf(buf, "<0x%lx 0x%lx 0x%lx 0x%lx 0x%lx 0x%lx>, /* 0x%lx ----> 0x%lx */\n",
+        ^
+tools/fdt_parse/fdt_parse.c:1196:9: portability: %lx in format string (no. 8) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+  ret = sprintf(buf, "<0x%lx 0x%lx 0x%lx 0x%lx 0x%lx 0x%lx>, /* 0x%lx ----> 0x%lx */\n",
+        ^
+tools/fdt_parse/fdt_parse.c:1212:3: warning: %ld in format string (no. 1) requires 'long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+  printf("[VIRQ] virq: %ld hirq: %ld\n",
+  ^
+tools/fdt_parse/fdt_parse.c:1212:3: warning: %ld in format string (no. 2) requires 'long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+  printf("[VIRQ] virq: %ld hirq: %ld\n",
+  ^
+tools/fdt_parse/fdt_parse.c:1214:9: warning: %ld in format string (no. 3) requires 'long' but the argument type is 'unsigned long'. [invalidPrintfArgType_sint]
+  ret = sprintf(buf, "<0x%lx 0x%lx>, /* %ld %s */\n", head->vstart,
+        ^
+tools/fdt_parse/fdt_parse.c:311:9: warning: Either the condition '!str' is redundant or there is possible null pointer dereference: str. [nullPointerRedundantCheck]
+ memset(str, 0, len);
+        ^
+tools/fdt_parse/fdt_parse.c:313:12: note: Assuming that condition '!str' is not redundant
+ if (!s || !str || (length == 0))
+           ^
+tools/fdt_parse/fdt_parse.c:311:9: note: Null pointer dereference
+ memset(str, 0, len);
+        ^
+tools/fdt_parse/fdt_parse.c:411:15: warning: Either the condition '!pnode' is redundant or there is possible null pointer dereference: pnode. [nullPointerRedundantCheck]
+ void *data = pnode->data;
+              ^
+tools/fdt_parse/fdt_parse.c:413:6: note: Assuming that condition '!pnode' is not redundant
+ if (!pnode)
+     ^
+tools/fdt_parse/fdt_parse.c:411:15: note: Null pointer dereference
+ void *data = pnode->data;
+              ^
+tools/fdt_parse/fdt_parse.c:382:16: style: Variable 'node->class' is reassigned a value before the old one has been used. [redundantAssignment]
+   node->class = DT_CLASS_PDEV;
+               ^
+tools/fdt_parse/fdt_parse.c:370:16: note: node->class is assigned
+   node->class = DT_CLASS_PDEV;
+               ^
+tools/fdt_parse/fdt_parse.c:382:16: note: node->class is overwritten
+   node->class = DT_CLASS_PDEV;
+               ^
+tools/fdt_parse/fdt_parse.c:81:11: style: The scope of the variable 'v' can be reduced. [variableScope]
+ fdt32_t *v;
+          ^
+tools/fdt_parse/fdt_parse.c:101:11: style: The scope of the variable 'v' can be reduced. [variableScope]
+ fdt32_t *v;
+          ^
+tools/fdt_parse/fdt_parse.c:142:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+tools/fdt_parse/fdt_parse.c:517:11: style: The scope of the variable 'ip' can be reduced. [variableScope]
+ fdt32_t *ip;
+          ^
+tools/fdt_parse/fdt_parse.c:534:11: style: The scope of the variable 'ip' can be reduced. [variableScope]
+ fdt32_t *ip;
+          ^
+tools/fdt_parse/fdt_parse.c:1073:11: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int len, ret;
+          ^
+tools/fdt_parse/fdt_parse.c:1108:18: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int i, nr_addr, ret;
+                 ^
+tools/fdt_parse/fdt_parse.c:839:52: style:inconclusive: Function 'of_translate_address_index' argument 1 names different: declaration 'node' definition 'np'. [funcArgNamesDifferent]
+int of_translate_address_index(struct device_node *np,
+                                                   ^
+tools/fdt_parse/of.h:107:52: note: Function 'of_translate_address_index' argument 1 names different: declaration 'node' definition 'np'.
+int of_translate_address_index(struct device_node *node,
+                                                   ^
+tools/fdt_parse/fdt_parse.c:839:52: note: Function 'of_translate_address_index' argument 1 names different: declaration 'node' definition 'np'.
+int of_translate_address_index(struct device_node *np,
+                                                   ^
+tools/fdt_parse/libfdt/fdt_overlay.c:698:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+tools/fdt_parse/libfdt/fdt_overlay.c:741:40: style: The scope of the variable 'fragment' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                       ^
+tools/fdt_parse/libfdt/fdt_overlay.c:741:50: style: The scope of the variable 'target' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                                 ^
+tools/fdt_parse/libfdt/fdt_overlay.c:742:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+     ^
+tools/fdt_parse/libfdt/fdt_overlay.c:742:11: style: The scope of the variable 'frag_name_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+          ^
+tools/fdt_parse/libfdt/fdt_overlay.c:742:26: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                         ^
+tools/fdt_parse/libfdt/fdt_overlay.c:742:31: style: The scope of the variable 'rel_path_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                              ^
+tools/fdt_parse/libfdt/fdt_overlay.c:746:14: style: The scope of the variable 'frag_name' can be reduced. [variableScope]
+ const char *frag_name;
+             ^
+tools/fdt_parse/libfdt/fdt_overlay.c:747:14: style: The scope of the variable 'rel_path' can be reduced. [variableScope]
+ const char *rel_path;
+             ^
+tools/fdt_parse/libfdt/fdt_overlay.c:749:8: style: The scope of the variable 'buf' can be reduced. [variableScope]
+ char *buf;
+       ^
+tools/fdt_parse/libfdt/fdt_ro.c:659:14: style: The scope of the variable 'val' can be reduced. [variableScope]
+ const void *val;
+             ^
+tools/fdt_parse/libfdt/fdt_ro.c:839:14: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int offset, err;
+             ^
+tools/fdt_parse/libfdt/fdt_ro.c:865:6: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ int offset, nextoffset = 0;
+     ^
+tools/fdt_parse/libfdt/fdt_ro.c:866:11: style: The scope of the variable 'tag' can be reduced. [variableScope]
+ uint32_t tag;
+          ^
+tools/fdt_parse/libfdt/fdt_rw.c:102:20: warning: Invalid test for overflow '(p+oldlen)<p'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'oldlen<0'. [invalidTestForOverflow]
+ if (((p + oldlen) < p) || ((p + oldlen) > end))
+                   ^
+tools/fdt_parse/libfdt/fdt_rw.c:309:19: style: The scope of the variable 'newlen' can be reduced. [variableScope]
+ int err, oldlen, newlen;
+                  ^
+tools/fdt_parse/libfdt/fdt_rw.c:431:6: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int err;
+     ^
+tools/fdt_parse/libfdt/fdt_wip.c:119:41: style:inconclusive: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'. [funcArgNamesDifferent]
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+tools/fdt_parse/libfdt/libfdt_internal.h:69:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int nodeoffset);
+                                        ^
+tools/fdt_parse/libfdt/fdt_wip.c:119:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+tools/mkrmd/mkrmd.c:118:19: style: The scope of the variable 'cnt' can be reduced. [variableScope]
+ size_t size = 0, cnt, read_size;
+                  ^
+tools/mkrmd/mkrmd.c:118:24: style: The scope of the variable 'read_size' can be reduced. [variableScope]
+ size_t size = 0, cnt, read_size;
+                       ^
+tools/mkrmd/mkrmd.c:79:44: portability: 'imem.mem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ inode = (struct ramdisk_inode *)(imem.mem + imem.used);
+                                           ^
+tools/mkrmd/mkrmd.c:108:19: portability: 'fmem.mem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  memset(fmem.mem + fmem.used, 0, size);
+                  ^
+tools/mkrmd/mkrmd.c:119:24: portability: 'fmem.mem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ char *base = fmem.mem + fmem.used;
+                       ^
+tools/mvm/devices/block_if.c:119:13: error: syntax error [syntaxError]
+ TAILQ_HEAD(, blockif_elem) freeq;
+            ^
+tools/mvm/devices/vdev.c:99:19: style: The scope of the variable 'ops' can be reduced. [variableScope]
+ struct vdev_ops *ops;
+                  ^
+tools/mvm/devices/vdev.c:82:19: style: The scope of the variable 'ops' can be reduced. [variableScope]
+ struct vdev_ops *ops;
+                  ^
+tools/mvm/devices/virtio/virtio.c:112:31: style: The scope of the variable 'vd' can be reduced. [variableScope]
+ struct vring_desc *in_desc, *vd;
+                              ^
+tools/mvm/devices/virtio/virtio.c:344:18: style: The scope of the variable 'flags' can be reduced. [variableScope]
+ uint16_t event, flags;
+                 ^
+tools/mvm/devices/virtio/virtio.c:451:21: style: The scope of the variable 'vq' can be reduced. [variableScope]
+ struct virt_queue *vq;
+                    ^
+tools/mvm/devices/virtio/virtio.c:411:18: portability: 'hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(hbase + VIRTIO_MMIO_MAGIC_VALUE, VIRTIO_MMIO_MAGIG);
+                 ^
+tools/mvm/devices/virtio/virtio.c:412:18: portability: 'hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(hbase + VIRTIO_MMIO_VERSION, VIRTIO_VERSION);
+                 ^
+tools/mvm/devices/virtio/virtio.c:413:18: portability: 'hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(hbase + VIRTIO_MMIO_VENDOR_ID, VIRTIO_VENDER_ID);
+                 ^
+tools/mvm/devices/virtio/virtio.c:414:18: portability: 'hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(hbase + VIRTIO_MMIO_DEVICE_ID, type);
+                 ^
+tools/mvm/devices/virtio/virtio.c:415:18: portability: 'hbase' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ iowrite32(hbase + VIRTIO_MMIO_QUEUE_NUM_MAX, rs);
+                 ^
+tools/mvm/devices/virtio/virtio.c:551:19: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   ioread32(iomem + VIRTIO_MMIO_DRIVER_FEATURE1),
+                  ^
+tools/mvm/devices/virtio/virtio.c:552:19: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   ioread32(iomem + VIRTIO_MMIO_DRIVER_FEATURE0));
+                  ^
+tools/mvm/devices/virtio/virtio.c:608:27: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vq->num = ioread32(iomem + VIRTIO_MMIO_QUEUE_NUM);
+                          ^
+tools/mvm/devices/virtio/virtio.c:610:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ high = ioread32(iomem + VIRTIO_MMIO_QUEUE_DESC_HIGH);
+                       ^
+tools/mvm/devices/virtio/virtio.c:611:23: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ low = ioread32(iomem + VIRTIO_MMIO_QUEUE_DESC_LOW);
+                      ^
+tools/mvm/devices/virtio/virtio.c:615:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ high = ioread32(iomem + VIRTIO_MMIO_QUEUE_AVAIL_HIGH);
+                       ^
+tools/mvm/devices/virtio/virtio.c:616:23: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ low = ioread32(iomem + VIRTIO_MMIO_QUEUE_AVAIL_LOW);
+                      ^
+tools/mvm/devices/virtio/virtio.c:620:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ high = ioread32(iomem + VIRTIO_MMIO_QUEUE_USED_HIGH);
+                       ^
+tools/mvm/devices/virtio/virtio.c:621:23: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ low = ioread32(iomem + VIRTIO_MMIO_QUEUE_USED_LOW);
+                      ^
+tools/mvm/devices/virtio/virtio_block.c:364:13: error: Buffer is accessed out of bounds: blk->ident [bufferAccessOutOfBounds]
+ sprintf(blk->ident, "Minos--%02X%02X-%02X%02X-%02X%02X",
+            ^
+tools/mvm/devices/virtio/virtio_block.c:242:6: style: The scope of the variable 'idx' can be reduced. [variableScope]
+ int idx;
+     ^
+tools/mvm/devices/virtio/virtio_console.c:338:11: style: The scope of the variable 'idx' can be reduced. [variableScope]
+ uint16_t idx;
+          ^
+tools/mvm/devices/virtio/virtio_console.c:732:30: style: The scope of the variable 'port' can be reduced. [variableScope]
+ struct virtio_console_port *port;
+                             ^
+tools/mvm/devices/virtio/virtio_console.c:349:11: style: Checking if unsigned expression 'idx' is less than zero. [unsignedLessThanZero]
+  if (idx < 0)
+          ^
+tools/mvm/devices/virtio/virtio_net.c:916:44: error: Dereferencing 'net' after it is deallocated / released [deallocuse]
+ net->config = (struct virtio_net_config *)net->virtio_dev.config;
+                                           ^
+tools/mvm/devices/virtio/virtio_net.c:274:11: style: The scope of the variable 'idx' can be reduced. [variableScope]
+ uint16_t idx;
+          ^
+tools/mvm/devices/virtio/virtio_net.c:492:11: style: The scope of the variable 'idx' can be reduced. [variableScope]
+ uint16_t idx;
+          ^
+tools/mvm/devices/virtio/virtio_net.c:751:7: style: The scope of the variable 'zero_addr' can be reduced. [variableScope]
+ char zero_addr[ETHER_ADDR_LEN] = { 0, 0, 0, 0, 0, 0 };
+      ^
+tools/mvm/devices/virtio/virtio_net.c:324:11: style: Checking if unsigned expression 'idx' is less than zero. [unsignedLessThanZero]
+  if (idx < 0)
+          ^
+tools/mvm/devices/virtio/virtio_net.c:536:11: style: Checking if unsigned expression 'idx' is less than zero. [unsignedLessThanZero]
+  if (idx < 0)
+          ^
+tools/mvm/devices/virtio/virtio_net.c:628:10: style: Checking if unsigned expression 'idx' is less than zero. [unsignedLessThanZero]
+ if (idx < 0)
+         ^
+tools/mvm/libfdt/fdt_overlay.c:698:14: style: The scope of the variable 'name' can be reduced. [variableScope]
+ const char *name;
+             ^
+tools/mvm/libfdt/fdt_overlay.c:741:40: style: The scope of the variable 'fragment' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                       ^
+tools/mvm/libfdt/fdt_overlay.c:741:50: style: The scope of the variable 'target' can be reduced. [variableScope]
+ int root_sym, ov_sym, prop, path_len, fragment, target;
+                                                 ^
+tools/mvm/libfdt/fdt_overlay.c:742:6: style: The scope of the variable 'len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+     ^
+tools/mvm/libfdt/fdt_overlay.c:742:11: style: The scope of the variable 'frag_name_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+          ^
+tools/mvm/libfdt/fdt_overlay.c:742:26: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                         ^
+tools/mvm/libfdt/fdt_overlay.c:742:31: style: The scope of the variable 'rel_path_len' can be reduced. [variableScope]
+ int len, frag_name_len, ret, rel_path_len;
+                              ^
+tools/mvm/libfdt/fdt_overlay.c:746:14: style: The scope of the variable 'frag_name' can be reduced. [variableScope]
+ const char *frag_name;
+             ^
+tools/mvm/libfdt/fdt_overlay.c:747:14: style: The scope of the variable 'rel_path' can be reduced. [variableScope]
+ const char *rel_path;
+             ^
+tools/mvm/libfdt/fdt_overlay.c:749:8: style: The scope of the variable 'buf' can be reduced. [variableScope]
+ char *buf;
+       ^
+tools/mvm/libfdt/fdt_ro.c:659:14: style: The scope of the variable 'val' can be reduced. [variableScope]
+ const void *val;
+             ^
+tools/mvm/libfdt/fdt_ro.c:839:14: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int offset, err;
+             ^
+tools/mvm/libfdt/fdt_ro.c:865:6: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ int offset, nextoffset = 0;
+     ^
+tools/mvm/libfdt/fdt_ro.c:866:11: style: The scope of the variable 'tag' can be reduced. [variableScope]
+ uint32_t tag;
+          ^
+tools/mvm/libfdt/fdt_rw.c:102:20: warning: Invalid test for overflow '(p+oldlen)<p'; pointer overflow is undefined behavior. Some mainstream compilers removes handling of overflows when optimising the code and change the code to 'oldlen<0'. [invalidTestForOverflow]
+ if (((p + oldlen) < p) || ((p + oldlen) > end))
+                   ^
+tools/mvm/libfdt/fdt_rw.c:309:19: style: The scope of the variable 'newlen' can be reduced. [variableScope]
+ int err, oldlen, newlen;
+                  ^
+tools/mvm/libfdt/fdt_rw.c:431:6: style: The scope of the variable 'err' can be reduced. [variableScope]
+ int err;
+     ^
+tools/mvm/libfdt/fdt_wip.c:119:41: style:inconclusive: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'. [funcArgNamesDifferent]
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+tools/mvm/libfdt/libfdt_internal.h:69:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int nodeoffset);
+                                        ^
+tools/mvm/libfdt/fdt_wip.c:119:41: note: Function 'fdt_node_end_offset_' argument 2 names different: declaration 'nodeoffset' definition 'offset'.
+int fdt_node_end_offset_(void *fdt, int offset)
+                                        ^
+tools/mvm/main/mevent.c:160:17: style: The scope of the variable 'mevp' can be reduced. [variableScope]
+ struct mevent *mevp;
+                ^
+tools/mvm/main/mvm.c:187:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+tools/mvm/main/mvm.c:260:13: style: The scope of the variable 'vm' can be reduced. [variableScope]
+ struct vm *vm;
+            ^
+tools/mvm/main/mvm.c:313:9: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int i, ret;
+        ^
+tools/mvm/main/mvm.c:432:9: style: The scope of the variable 'size' can be reduced. [variableScope]
+ size_t size;
+        ^
+tools/mvm/main/mvm.c:433:11: style: The scope of the variable 'base' can be reduced. [variableScope]
+ uint64_t base;
+          ^
+tools/mvm/main/mvm.c:651:19: style: The scope of the variable 'node' can be reduced. [variableScope]
+ struct mvm_node *node;
+                  ^
+tools/mvm/main/mvm.c:335:21: portability: 'vmcs' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vcpu->vmcs = vmcs + i * VMCS_ENTRY_SIZE;
+                    ^
+tools/mvm/main/option.c:245:39: style: Condition '*args==0' is always false [knownConditionTrueFalse]
+  } else if ((*args == ',') || (*args == 0)){
+                                      ^
+tools/mvm/main/option.c:242:15: note: Assuming that condition '*args!=0' is not redundant
+ while (*args != 0) {
+              ^
+tools/mvm/main/option.c:245:39: note: Condition '*args==0' is always false
+  } else if ((*args == ',') || (*args == 0)){
+                                      ^
+tools/mvm/main/option.c:115:7: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+  ret = strsep(&tmp, ",");
+      ^
+tools/mvm/main/option.c:125:7: style: Variable 'ret' is assigned a value that is never used. [unreadVariable]
+  ret = strsep(&tmp, "=");
+      ^
+tools/mvm/os/os.c:28:16: style: The scope of the variable 'os' can be reduced. [variableScope]
+ struct vm_os *os;
+               ^
+tools/mvm/os/os_linux.c:351:15: style:inconclusive: Boolean expression '!vm->flags' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+   !vm->flags & VM_FLAGS_32BIT);
+              ^
+tools/mvm/os/os_linux.c:351:15: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+   !vm->flags & VM_FLAGS_32BIT);
+              ^
+tools/mvm/os/os_linux.c:221:14: style: The scope of the variable 'node' can be reduced. [variableScope]
+ int offset, node, i;
+             ^
+tools/mvm/os/os_linux.c:477:39: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ret = load_spare_image(vm->kfd, base + 0x80000);
+                                      ^
+tools/mvm/os/os_linux.c:483:39: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ret = load_spare_image(vm->dfd, base + vm->setup_data - vm->mem_start);
+                                      ^
+tools/mvm/os/os_linux.c:492:39: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ret = load_spare_image(vm->rfd, base + 0x3000000);
+                                      ^
+tools/mvm/os/os_xnu.c:330:3: error: Memory leak: cmds [memleak]
+  return -EIO;
+  ^
+tools/mvm/os/os_xnu.c:190:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+tools/mvm/os/os_xnu.c:192:16: style: The scope of the variable 'offset' can be reduced. [variableScope]
+ unsigned long offset;
+               ^
+tools/mvm/os/os_xnu.c:195:24: style: The scope of the variable 'cmd' can be reduced. [variableScope]
+ struct segment_cmd64 *cmd;
+                       ^
+tools/mvm/os/os_xnu.c:171:10: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   (base + offset), offset, file_off, file_size);
+         ^
+tools/mvm/os/os_xnu.c:181:22: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ret = read(fd, base + offset, file_size);
+                     ^
+tools/mvm/os/os_xnu.c:213:19: portability: 'vm_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+   memset(vm_base + cmd->file_size + offset, 0,
+                  ^
+virt/debug_console.c:100:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+virt/debug_console.c:264:18: style: Checking if unsigned expression 'dcon->irq' is less than zero. [unsignedLessThanZero]
+   if (dcon->irq < 0)
+                 ^
+virt/debug_console.c:164:30: portability: 'ring' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ r = (struct vm_ring *)(ring + sizeof(struct vm_ring) +
+                             ^
+virt/debug_console.c:164:55: portability: 'ring+sizeof(struct vm_ring)' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ r = (struct vm_ring *)(ring + sizeof(struct vm_ring) +
+                                                      ^
+virt/os/os_linux.c:219:3: warning: %x in format string (no. 1) requires 'unsigned int' but the argument type is 'unsigned long'. [invalidPrintfArgType_uint]
+  sprintf(name, "cpu@%x", aff_id);
+  ^
+virt/os/os_linux.c:199:14: style: The scope of the variable 'node' can be reduced. [variableScope]
+ int offset, node, i;
+             ^
+virt/os/os_xnu.c:129:11: style: The scope of the variable 'regs' can be reduced. [variableScope]
+ gp_regs *regs;
+          ^
+virt/resource.c:186:20: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int len, len_aff, ret;
+                   ^
+virt/resource.c:239:18: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int i, nr_addr, ret;
+                 ^
+virt/resource.c:392:16: style: The scope of the variable 'vaddr' can be reduced. [variableScope]
+ unsigned long vaddr, paddr, size;
+               ^
+virt/resource.c:392:23: style: The scope of the variable 'paddr' can be reduced. [variableScope]
+ unsigned long vaddr, paddr, size;
+                      ^
+virt/resource.c:392:30: style: The scope of the variable 'size' can be reduced. [variableScope]
+ unsigned long vaddr, paddr, size;
+                             ^
+virt/resource.c:420:11: style: The scope of the variable 'phy' can be reduced. [variableScope]
+ uint32_t phy, vir;
+          ^
+virt/resource.c:420:16: style: The scope of the variable 'vir' can be reduced. [variableScope]
+ uint32_t phy, vir;
+               ^
+virt/vdev.c:151:8: warning: Either the condition '!va' is redundant or there is possible null pointer dereference: va. [nullPointerRedundantCheck]
+  va = va->next;
+       ^
+virt/vdev.c:150:16: note: Assuming that condition '!va' is not redundant
+ while (idx || !va) {
+               ^
+virt/vdev.c:151:8: note: Null pointer dereference
+  va = va->next;
+       ^
+virt/vdev.c:204:6: style: The scope of the variable 'idx' can be reduced. [variableScope]
+ int idx, ret = 0;
+     ^
+virt/virq.c:82:18: warning: Either the condition '!vcpu' is redundant or there is possible null pointer dereference: vcpu. [nullPointerRedundantCheck]
+ struct vm *vm = vcpu->vm;
+                 ^
+virt/virq.c:85:6: note: Assuming that condition '!vcpu' is not redundant
+ if (!vcpu || !desc)
+     ^
+virt/virq.c:82:18: note: Null pointer dereference
+ struct vm *vm = vcpu->vm;
+                 ^
+virt/virq.c:332:15: style: The scope of the variable 'vcpu' can be reduced. [variableScope]
+ struct vcpu *vcpu;
+              ^
+virt/virq.c:334:20: style: The scope of the variable 'desc' can be reduced. [variableScope]
+ struct virq_desc *desc;
+                   ^
+virt/virq.c:417:20: style: The scope of the variable 'desc' can be reduced. [variableScope]
+ struct virq_desc *desc;
+                   ^
+virt/virq.c:536:20: style: The scope of the variable 'desc' can be reduced. [variableScope]
+ struct virq_desc *desc;
+                   ^
+virt/virq.c:600:22: style: The scope of the variable 'vs' can be reduced. [variableScope]
+ struct virq_struct *vs;
+                     ^
+virt/virq.c:646:20: style: The scope of the variable 'desc' can be reduced. [variableScope]
+ struct virq_desc *desc;
+                   ^
+virt/virq.c:665:6: style: The scope of the variable 'i' can be reduced. [variableScope]
+ int i;
+     ^
+virt/virq.c:666:20: style: The scope of the variable 'desc' can be reduced. [variableScope]
+ struct virq_desc *desc;
+                   ^
+virt/virq.c:629:40: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vm->vspi_map = (unsigned long *)(base + vdesc_size);
+                                       ^
+virt/virq.c:631:14: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = base + vdesc_size + vdesc_bitmap_size;
+             ^
+virt/virq.c:631:27: portability: 'base+vdesc_size' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = base + vdesc_size + vdesc_bitmap_size;
+                          ^
+virt/virq.c:636:8: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  base += status_bitmap_size;
+       ^
+virt/virq.c:638:8: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  base += status_bitmap_size;
+       ^
+virt/virq_chips/bcm_virq.c:161:8: style: The scope of the variable 'base' can be reduced. [variableScope]
+ void *base;
+       ^
+virt/virq_chips/bcm_virq.c:532:20: style: The scope of the variable 'virq' can be reduced. [variableScope]
+ struct virq_desc *virq;
+                   ^
+virt/virq_chips/bcm_virq.c:179:31: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ v = readl_relaxed(dev->iomem + offset);
+                              ^
+virt/virq_chips/bcm_virq.c:181:31: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(v, dev->iomem + offset);
+                              ^
+virt/virq_chips/bcm_virq.c:185:21: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  base = dev->iomem + LOCAL_IRQ_PENDING0 + 4 * cpu;
+                    ^
+virt/virq_chips/bcm_virq.c:208:31: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(v, dev->iomem + offset);
+                              ^
+virt/virq_chips/bcm_virq.c:278:20: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = dev->iomem + (LOCAL_MAILBOX0_CLR0 + vcpu->vcpu_id * 16);
+                   ^
+virt/virq_chips/bcm_virq.c:285:20: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = dev->iomem + LOCAL_IRQ_PENDING0 + 4 * vcpu->vcpu_id;
+                   ^
+virt/virq_chips/bcm_virq.c:306:20: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = dev->iomem + LOCAL_IRQ_PENDING0 + 4 * vcpu->vcpu_id;
+                   ^
+virt/virq_chips/bcm_virq.c:441:20: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = dev->iomem + LOCAL_IRQ_PENDING0 + (vcpu->vcpu_id * 4);
+                   ^
+virt/virq_chips/bcm_virq.c:465:32: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  v = readl_relaxed(dev->iomem + BCM2835_IRQ_BASIC_PENDING);
+                               ^
+virt/virq_chips/bcm_virq.c:467:32: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  writel_relaxed(v, dev->iomem + BCM2835_IRQ_BASIC_PENDING);
+                               ^
+virt/virq_chips/bcm_virq.c:475:20: portability: 'dev->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = dev->iomem + LOCAL_IRQ_PENDING0;
+                   ^
+virt/virq_chips/bcm_virq.c:571:24: portability: 'bcm2836->iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ base = bcm2836->iomem + 0x200;
+                       ^
+virt/virq_chips/bcm_virq.c:572:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_pending[0] = base + 0x0;
+                                    ^
+virt/virq_chips/bcm_virq.c:573:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_pending[1] = base + 0x04;
+                                    ^
+virt/virq_chips/bcm_virq.c:574:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_pending[2] = base + 0x08;
+                                    ^
+virt/virq_chips/bcm_virq.c:575:36: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_enable[0] = base + 0x18;
+                                   ^
+virt/virq_chips/bcm_virq.c:576:36: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_enable[1] = base + 0x10;
+                                   ^
+virt/virq_chips/bcm_virq.c:577:36: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_enable[2] = base + 0x14;
+                                   ^
+virt/virq_chips/bcm_virq.c:578:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_disable[0] = base + 0x24;
+                                    ^
+virt/virq_chips/bcm_virq.c:579:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_disable[1] = base + 0x1c;
+                                    ^
+virt/virq_chips/bcm_virq.c:580:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ bcm2836->bcm2835_disable[2] = base + 0x20;
+                                    ^
+virt/virq_chips/vgic.c:117:20: style: The scope of the variable 'virq' can be reduced. [variableScope]
+ struct virq_desc *virq;
+                   ^
+virt/virq_chips/vgicv2.c:760:8: warning: The address of local variable 'vgicv2_info' might be accessed at non-zero index. [objectIndex]
+  value[i] = data[i];
+       ^
+virt/virq_chips/vgicv2.c:749:42: note: Address of variable taken here.
+ unsigned long *value = (unsigned long *)&vgicv2_info;
+                                         ^
+virt/virq_chips/vgicv2.c:753:21: note: Assuming condition is false
+ if ((data == NULL) || (len == 0)) {
+                    ^
+virt/virq_chips/vgicv2.c:760:8: note: The address of local variable 'vgicv2_info' might be accessed at non-zero index.
+  value[i] = data[i];
+       ^
+virt/virq_chips/vgicv2.c:761:12: warning: The address of local variable 'vgicv2_info' might be accessed at non-zero index. [objectIndex]
+  if (value[i] == 0) {
+           ^
+virt/virq_chips/vgicv2.c:749:42: note: Address of variable taken here.
+ unsigned long *value = (unsigned long *)&vgicv2_info;
+                                         ^
+virt/virq_chips/vgicv2.c:753:21: note: Assuming condition is false
+ if ((data == NULL) || (len == 0)) {
+                    ^
+virt/virq_chips/vgicv2.c:761:12: note: The address of local variable 'vgicv2_info' might be accessed at non-zero index.
+  if (value[i] == 0) {
+           ^
+virt/virq_chips/vgicv2.c:83:22: style: The scope of the variable 'tmp' can be reduced. [variableScope]
+ uint32_t value = 0, tmp;
+                     ^
+virt/virq_chips/vgicv2.c:116:22: style: The scope of the variable 't' can be reduced. [variableScope]
+ uint32_t value = 0, t;
+                     ^
+virt/virq_chips/vgicv2.c:134:22: style: The scope of the variable 't' can be reduced. [variableScope]
+ uint32_t value = 0, t;
+                     ^
+virt/virq_chips/vgicv2.c:152:22: style: The scope of the variable 't' can be reduced. [variableScope]
+ uint32_t value = 0, t;
+                     ^
+virt/virq_chips/vgicv2.c:245:15: style: The scope of the variable 'target' can be reduced. [variableScope]
+ struct vcpu *target;
+              ^
+virt/virq_chips/vgicv2.c:479:52: portability: '(void*)vgicv2_info.gich_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ writel_relaxed(val, (void *)vgicv2_info.gich_base + offset);
+                                                   ^
+virt/virq_chips/vgicv2.c:484:53: portability: '(void*)vgicv2_info.gich_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ return readl_relaxed((void *)vgicv2_info.gich_base + offset);
+                                                    ^
+virt/virq_chips/vgicv2.c:774:52: portability: '(void*)vgicv2_info.gich_base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ vtr = readl_relaxed((void *)vgicv2_info.gich_base + GICH_VTR);
+                                                   ^
+virt/virq_chips/vgicv3.c:1061:8: warning: The address of local variable 'vgicv3_info' might be accessed at non-zero index. [objectIndex]
+  value[i] = (unsigned long)data[i];
+       ^
+virt/virq_chips/vgicv3.c:1058:42: note: Address of variable taken here.
+ unsigned long *value = (unsigned long *)&vgicv3_info;
+                                         ^
+virt/virq_chips/vgicv3.c:1061:8: note: The address of local variable 'vgicv3_info' might be accessed at non-zero index.
+  value[i] = (unsigned long)data[i];
+       ^
+virt/virq_chips/vgicv3.c:551:18: warning: Either the condition '!gic' is redundant or there is possible null pointer dereference: gic. [nullPointerRedundantCheck]
+ struct vm *vm = gic->vdev.vm;
+                 ^
+virt/virq_chips/vgicv3.c:554:6: note: Assuming that condition '!gic' is not redundant
+ if (!gic)
+     ^
+virt/virq_chips/vgicv3.c:551:18: note: Null pointer dereference
+ struct vm *vm = gic->vdev.vm;
+                 ^
+virt/virq_chips/vgicv3.c:101:21: style: The scope of the variable 'aff3' can be reduced. [variableScope]
+ unsigned long tmp, aff3, aff2, aff1;
+                    ^
+virt/virq_chips/vgicv3.c:101:27: style: The scope of the variable 'aff2' can be reduced. [variableScope]
+ unsigned long tmp, aff3, aff2, aff1;
+                          ^
+virt/virq_chips/vgicv3.c:101:33: style: The scope of the variable 'aff1' can be reduced. [variableScope]
+ unsigned long tmp, aff3, aff2, aff1;
+                                ^
+virt/virq_chips/vgicv3.c:102:11: style: The scope of the variable 'logic_cpu' can be reduced. [variableScope]
+ int bit, logic_cpu;
+          ^
+virt/virq_chips/vgicv3.c:104:15: style: The scope of the variable 'target' can be reduced. [variableScope]
+ struct vcpu *target;
+              ^
+virt/virq_chips/vgicv3.c:176:22: style: The scope of the variable 'tmp' can be reduced. [variableScope]
+ uint32_t value = 0, tmp;
+                     ^
+virt/virq_chips/vgicv3.c:332:6: style: The scope of the variable 'bit' can be reduced. [variableScope]
+ int bit;
+     ^
+virt/virq_chips/vgicv3.c:552:20: style: The scope of the variable 'gicr' can be reduced. [variableScope]
+ struct vgic_gicr *gicr;
+                   ^
+virt/virq_chips/vgicv3.c:112:33: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+ mode = sgi_value & (1UL << 40) ? SGI_TO_OTHERS : SGI_TO_LIST;
+                                ^
+virt/virq_chips/vgicv3.c:213:35: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+   *value = gicd->gicd_ctlr & ~(1 << 31);
+                                  ^
+virt/virq_chips/vgicv3.c:337:35: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+   *value = gicr->gicr_ctlr & ~(1 << 31);
+                                  ^
+virt/virq_chips/vgicv3.c:213:35: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+   *value = gicd->gicd_ctlr & ~(1 << 31);
+                                  ^
+virt/virq_chips/vgicv3.c:337:35: error: Signed integer overflow for expression '1<<31'. [integerOverflow]
+   *value = gicr->gicr_ctlr & ~(1 << 31);
+                                  ^
+virt/virq_chips/vgicv3.c:1034:44: error: Signed integer overflow for expression '0xff<<24'. [integerOverflow]
+ c->ich_vmcr_el2 = GICH_VMCR_VENG1 | (0xff << 24);
+                                           ^
+virt/virtio_mmio.c:58:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = ioread32(iomem + VIRTIO_MMIO_HOST_FEATURE0 +
+                       ^
+virt/virtio_mmio.c:60:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(tmp, iomem + VIRTIO_MMIO_HOST_FEATURES);
+                       ^
+virt/virtio_mmio.c:63:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_GUEST_FEATURES_SEL);
+                         ^
+virt/virtio_mmio.c:66:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = ioread32(iomem + VIRTIO_MMIO_GUEST_FEATURES_SEL);
+                       ^
+virt/virtio_mmio.c:68:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + tmp);
+                         ^
+virt/virtio_mmio.c:72:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_GUEST_PAGE_SIZE);
+                         ^
+virt/virtio_mmio.c:75:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_SEL);
+                         ^
+virt/virtio_mmio.c:78:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_READY);
+                     ^
+virt/virtio_mmio.c:79:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_NUM);
+                     ^
+virt/virtio_mmio.c:80:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_DESC_LOW);
+                     ^
+virt/virtio_mmio.c:81:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_DESC_HIGH);
+                     ^
+virt/virtio_mmio.c:82:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_AVAIL_LOW);
+                     ^
+virt/virtio_mmio.c:83:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_AVAIL_HIGH);
+                     ^
+virt/virtio_mmio.c:84:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_USED_LOW);
+                     ^
+virt/virtio_mmio.c:85:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_QUEUE_USED_HIGH);
+                     ^
+virt/virtio_mmio.c:88:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = ioread32(iomem + VIRTIO_MMIO_QUEUE_NUM_MAX);
+                       ^
+virt/virtio_mmio.c:91:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_NUM);
+                         ^
+virt/virtio_mmio.c:94:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_ALIGN);
+                         ^
+virt/virtio_mmio.c:98:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_PFN);
+                         ^
+virt/virtio_mmio.c:108:24: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  tmp = ioread32(iomem + VIRTIO_MMIO_STATUS);
+                       ^
+virt/virtio_mmio.c:111:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_STATUS);
+                         ^
+virt/virtio_mmio.c:115:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_DESC_LOW);
+                         ^
+virt/virtio_mmio.c:118:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_AVAIL_LOW);
+                         ^
+virt/virtio_mmio.c:121:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_USED_LOW);
+                         ^
+virt/virtio_mmio.c:124:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_DESC_HIGH);
+                         ^
+virt/virtio_mmio.c:127:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_USED_HIGH);
+                         ^
+virt/virtio_mmio.c:130:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(value, iomem + VIRTIO_MMIO_QUEUE_AVAIL_HIGH);
+                         ^
+virt/virtio_mmio.c:133:26: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  value = ioread32(iomem + VIRTIO_MMIO_QUEUE_SEL);
+                         ^
+virt/virtio_mmio.c:138:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_INTERRUPT_ACK);
+                     ^
+virt/virtio_mmio.c:139:22: portability: 'iomem' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  iowrite32(0, iomem + VIRTIO_MMIO_INTERRUPT_STATUS);
+                     ^
+virt/vm.c:328:2: warning: %d in format string (no. 2) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+ sprintf(name, "%s-vcpu-%d", vm->name, vcpu_id);
+ ^
+virt/vm.c:711:15: style: The scope of the variable 'vcpu' can be reduced. [variableScope]
+ struct vcpu *vcpu;
+              ^
+virt/vm.c:789:15: style: The scope of the variable 'vcpu' can be reduced. [variableScope]
+ struct vcpu *vcpu;
+              ^
+virt/vm.c:1098:11: style: The scope of the variable 'vmid' can be reduced. [variableScope]
+ uint32_t vmid;
+          ^
+virt/vm_daemon.c:90:21: style: The scope of the variable 'vs' can be reduced. [variableScope]
+ struct vm_request *vs;
+                    ^
+virt/vm_pm.c:107:13: style: The scope of the variable 'gvm' can be reduced. [variableScope]
+ struct vm *gvm;
+            ^
+virt/vmbox/vmbox.c:840:6: style: Redundant initialization for 'ret'. The initialized value is overwritten before it is read. [redundantInitialization]
+ ret = __vm_create_vmbox_controller_static(vm);
+     ^
+virt/vmbox/vmbox.c:834:10: note: ret is initialized
+ int ret = -EAGAIN;
+         ^
+virt/vmbox/vmbox.c:840:6: note: ret is overwritten
+ ret = __vm_create_vmbox_controller_static(vm);
+     ^
+virt/vmbox/vmbox.c:417:16: style: The scope of the variable 'vmbox' can be reduced. [variableScope]
+ struct vmbox *vmbox;
+               ^
+virt/vmbox/vmbox.c:874:21: style: The scope of the variable 'hook' can be reduced. [variableScope]
+ struct vmbox_hook *hook;
+                    ^
+virt/vmbox/vmbox_hvc.c:69:34: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ring = (struct hvc_ring *)(base + header_size + BUF_0_SIZE);
+                                 ^
+virt/vmbox/vmbox_hvc.c:69:48: portability: 'base+header_size' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+ ring = (struct hvc_ring *)(base + header_size + BUF_0_SIZE);
+                                               ^
+virt/vmcs.c:158:15: style: The scope of the variable 'vcpu' can be reduced. [variableScope]
+ struct vcpu *vcpu;
+              ^
+virt/vmcs.c:181:37: portability: 'base' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  vcpu->vmcs = (struct vmcs *)(base +
+                                    ^
+virt/vmm.c:78:16: style: The scope of the variable 'end' can be reduced. [variableScope]
+ unsigned long end;
+               ^
+virt/vmm.c:233:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+virt/vmm.c:503:9: style: The scope of the variable 'copy_size' can be reduced. [variableScope]
+ size_t copy_size, left = size;
+        ^
+virt/vmm.c:504:16: style: The scope of the variable 'pa' can be reduced. [variableScope]
+ unsigned long pa;
+               ^
+virt/vmm.c:505:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+virt/vmm.c:549:6: style: The scope of the variable 'ret' can be reduced. [variableScope]
+ int ret;
+     ^
+virt/vmm.c:782:16: style: The scope of the variable 'base' can be reduced. [variableScope]
+ unsigned long base, end, size;
+               ^
+virt/vmm.c:782:22: style: The scope of the variable 'end' can be reduced. [variableScope]
+ unsigned long base, end, size;
+                     ^
+virt/vmm.c:782:27: style: The scope of the variable 'size' can be reduced. [variableScope]
+ unsigned long base, end, size;
+                          ^
+virt/vmm.c:952:19: style: Checking if unsigned expression 'end-start' is less than zero. [unsignedLessThanZero]
+  if (end - start <= 0) {
+                  ^
+virt/vmm.c:523:10: portability: 'target' is of type 'void *'. When using void pointers in calculations, the behaviour is undefined. [arithOperationsOnVoidPointer]
+  target += copy_size;
+         ^
+virt/vmodule.c:84:18: style: The scope of the variable 'vmodule' can be reduced. [variableScope]
+ struct vmodule *vmodule;
+                 ^
+virt/vmodule.c:121:8: style: The scope of the variable 'data' can be reduced. [variableScope]
+ void *data;
+       ^
+virt/vmodule.c:161:18: style: The scope of the variable 'vmodule' can be reduced. [variableScope]
+ struct vmodule *vmodule;
+                 ^
+virt/vrtc.c:68:11: style: The scope of the variable 't' can be reduced. [variableScope]
+ uint64_t t;
+          ^
+virt/vwdt.c:164:24: style: The statement 'if (wdt->reset_enable!=reset_enable) wdt->reset_enable=reset_enable' is logically equivalent to 'wdt->reset_enable=reset_enable'. [duplicateConditionalAssign]
+ if (wdt->reset_enable != reset_enable)
+                       ^
+virt/vwdt.c:165:21: note: Assignment 'wdt->reset_enable=reset_enable'
+  wdt->reset_enable = reset_enable;
+                    ^
+virt/vwdt.c:164:24: note: Condition 'wdt->reset_enable!=reset_enable' is redundant
+ if (wdt->reset_enable != reset_enable)
+                       ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:558:6: warning: Null pointer dereference: vq [ctunullpointer]
+ if (vq->direction == VMBOX_VIRTQ_OUT)
+     ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:313:7: note: Assuming that condition 'vq' is not redundant
+
+      ^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:318:29: note: Calling function vmbox_virtq_consume_descs, 1st argument is null
+   vmbox_virtq_consume_descs(vq);
+                            ^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:558:6: note: Dereferencing argument vq that is null
+ if (vq->direction == VMBOX_VIRTQ_OUT)
+     ^
+core/bitmap.c:68:0: style: The function '__bitmap_weight' is never used. [unusedFunction]
+
+^
+core/irq.c:114:0: style: The function '__irq_enable' is never used. [unusedFunction]
+
+^
+core/sched.c:42:0: style: The function '__might_sleep' is never used. [unusedFunction]
+
+^
+virt/vmcs.c:24:0: style: The function '__vcpu_trap' is never used. [unusedFunction]
+
+^
+core/event.c:98:0: style: The function '__wake_up_event_waiter' is never used. [unusedFunction]
+
+^
+core/string.c:35:0: style: The function 'absolute' is never used. [unusedFunction]
+
+^
+arch/aarch64/virt/arch_virt.c:98:0: style: The function 'arch_clear_vfiq_flag' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/arm_arch_timer.c:57:0: style: The function 'arch_enable_timer' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/arch.c:133:0: style: The function 'arch_is_exit_to_user' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/arch.c:343:0: style: The function 'arch_main' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/arch.c:128:0: style: The function 'arch_taken_from_guest' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/aarch64_sync.c:87:0: style: The function 'bad_mode' is never used. [unusedFunction]
+
+^
+core/bitmap.c:135:0: style: The function 'bitmap_find_next_zero_area_off' is never used. [unusedFunction]
+
+^
+core/minos.c:98:0: style: The function 'boot_secondary' is never used. [unusedFunction]
+
+^
+core/bootarg.c:106:0: style: The function 'bootarg_parse_bool' is never used. [unusedFunction]
+
+^
+core/bootarg.c:91:0: style: The function 'bootarg_parse_hex32' is never used. [unusedFunction]
+
+^
+core/bootarg.c:96:0: style: The function 'bootarg_parse_hex64' is never used. [unusedFunction]
+
+^
+core/vspace.c:57:0: style: The function 'change_host_mapping' is never used. [unusedFunction]
+
+^
+drivers/console.c:90:0: style: The function 'console_getc' is never used. [unusedFunction]
+
+^
+drivers/console.c:112:0: style: The function 'console_puts' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_veth.c:75:0: style: The function 'copy_data_from_skb' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_veth.c:69:0: style: The function 'copy_iodata_to_skb' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/cpu_feature.c:44:0: style: The function 'cpu_has_vhe' is never used. [unusedFunction]
+
+^
+virt/vdev.c:158:0: style: The function 'create_host_vdev' is never used. [unusedFunction]
+
+^
+core/task.c:360:0: style: The function 'create_percpu_tasks' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:31:0: style: The function 'device_show' is never used. [unusedFunction]
+
+^
+apps/esh/esh.c:485:0: style: The function 'esh_get_slice_size' is never used. [unusedFunction]
+
+^
+apps/esh/esh.c:73:0: style: The function 'esh_register_overflow' is never used. [unusedFunction]
+
+^
+apps/esh/esh.c:81:0: style: The function 'esh_set_command_arg' is never used. [unusedFunction]
+
+^
+apps/esh/esh_hist.c:232:0: style: The function 'esh_set_histbuf' is never used. [unusedFunction]
+
+^
+apps/esh/esh.c:95:0: style: The function 'esh_set_overflow_arg' is never used. [unusedFunction]
+
+^
+apps/esh/esh.c:88:0: style: The function 'esh_set_print_arg' is never used. [unusedFunction]
+
+^
+core/sched.c:417:0: style: The function 'exception_return_handler' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:861:0: style: The function 'fdt_check_full' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_empty_tree.c:58:0: style: The function 'fdt_create_empty_tree' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_rw.c:332:0: style: The function 'fdt_delprop' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:540:0: style: The function 'fdt_get_alias' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:387:0: style: The function 'fdt_get_property_by_offset' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:836:0: style: The function 'fdt_node_offset_by_compatible' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:654:0: style: The function 'fdt_node_offset_by_prop_value' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_wip.c:129:0: style: The function 'fdt_nop_node' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_wip.c:105:0: style: The function 'fdt_nop_property' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_overlay.c:864:0: style: The function 'fdt_overlay_apply' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_sw.c:167:0: style: The function 'fdt_resize' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_strerror.c:88:0: style: The function 'fdt_strerror' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:133:0: style: The function 'fdt_string' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:723:0: style: The function 'fdt_stringlist_count' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:778:0: style: The function 'fdt_stringlist_get' is never used. [unusedFunction]
+
+^
+libs/libfdt/fdt_ro.c:748:0: style: The function 'fdt_stringlist_search' is never used. [unusedFunction]
+
+^
+core/find_bit.c:126:0: style: The function 'find_last_bit' is never used. [unusedFunction]
+
+^
+core/find_bit.c:84:0: style: The function 'find_next_bit_loop' is never used. [unusedFunction]
+
+^
+core/flag.c:87:0: style: The function 'flag_accept' is never used. [unusedFunction]
+
+^
+core/flag.c:241:0: style: The function 'flag_pend_get_flags_ready' is never used. [unusedFunction]
+
+^
+core/flag.c:246:0: style: The function 'flag_post' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/stage1.c:102:0: style: The function 'flush_dcache_pmd' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/stage1.c:97:0: style: The function 'flush_dcache_pte' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:327:0: style: The function 'get_option_hex32' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:322:0: style: The function 'get_option_hex64' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:332:0: style: The function 'get_option_int' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:337:0: style: The function 'get_option_uint32' is never used. [unusedFunction]
+
+^
+virt/vm.c:944:0: style: The function 'get_vm_type' is never used. [unusedFunction]
+
+^
+drivers/irq-chips/gicv2.c:163:0: style: The function 'gicv2_clear_pending' is never used. [unusedFunction]
+
+^
+arch/aarch64/virt/trap.c:33:0: style: The function 'inject_virtual_data_abort' is never used. [unusedFunction]
+
+^
+core/sched.c:363:0: style: The function 'irq_enter' is never used. [unusedFunction]
+
+^
+core/sched.c:369:0: style: The function 'irq_exit' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/aarch64_IRQ.c:31:0: style: The function 'irq_from_current_el' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/aarch64_IRQ.c:26:0: style: The function 'irq_from_lower_el' is never used. [unusedFunction]
+
+^
+core/print.c:79:0: style: The function 'level_print' is never used. [unusedFunction]
+
+^
+core/mbox.c:23:0: style: The function 'mbox_accept' is never used. [unusedFunction]
+
+^
+core/mbox.c:35:0: style: The function 'mbox_is_pending' is never used. [unusedFunction]
+
+^
+core/mbox.c:40:0: style: The function 'mbox_pend' is never used. [unusedFunction]
+
+^
+core/mbox.c:122:0: style: The function 'mbox_post' is never used. [unusedFunction]
+
+^
+tools/mvm/main/mevent.c:227:0: style: The function 'mevent_disable' is never used. [unusedFunction]
+
+^
+tools/mvm/main/mevent.c:221:0: style: The function 'mevent_enable' is never used. [unusedFunction]
+
+^
+tools/mvm/main/mevent.c:103:0: style: The function 'mevent_notify' is never used. [unusedFunction]
+
+^
+core/mbox.c:116:0: style: The function 'mobox_post_abort' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:49:0: style: The function 'modalias_show' is never used. [unusedFunction]
+
+^
+core/mutex.c:23:0: style: The function 'mutex_accept' is never used. [unusedFunction]
+
+^
+core/mutex.c:40:0: style: The function 'mutex_pend' is never used. [unusedFunction]
+
+^
+core/mutex.c:88:0: style: The function 'mutex_post' is never used. [unusedFunction]
+
+^
+drivers/serial/serial_mvebu_a3700.c:61:0: style: The function 'mvebu_serial_setbrg' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:381:0: style: The function 'mvm_parse_option_hex32' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:376:0: style: The function 'mvm_parse_option_hex64' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:391:0: style: The function 'mvm_parse_option_int' is never used. [unusedFunction]
+
+^
+tools/mvm/main/option.c:386:0: style: The function 'mvm_parse_option_uint32' is never used. [unusedFunction]
+
+^
+tools/mvm/main/mvm_queue.c:78:0: style: The function 'mvm_queue_deinit' is never used. [unusedFunction]
+
+^
+drivers/of/of.c:1068:0: style: The function 'of_get_chosen_prop64' is never used. [unusedFunction]
+
+^
+drivers/of/of.c:227:0: style: The function 'of_get_cmdline' is never used. [unusedFunction]
+
+^
+drivers/of/of.c:1078:0: style: The function 'of_get_ramdisk_address' is never used. [unusedFunction]
+
+^
+drivers/of/of.c:521:0: style: The function 'of_n_addr_cells' is never used. [unusedFunction]
+
+^
+drivers/of/of.c:538:0: style: The function 'of_n_size_cells' is never used. [unusedFunction]
+
+^
+core/queue.c:88:0: style: The function 'queue_accept' is never used. [unusedFunction]
+
+^
+core/queue.c:105:0: style: The function 'queue_flush' is never used. [unusedFunction]
+
+^
+core/queue.c:48:0: style: The function 'queue_free' is never used. [unusedFunction]
+
+^
+core/queue.c:195:0: style: The function 'queue_post_abort' is never used. [unusedFunction]
+
+^
+core/queue.c:205:0: style: The function 'queue_post_front' is never used. [unusedFunction]
+
+^
+virt/virq.c:581:0: style: The function 'release_vm_virq' is never used. [unusedFunction]
+
+^
+core/sem.c:23:0: style: The function 'sem_accept' is never used. [unusedFunction]
+
+^
+core/sem.c:101:0: style: The function 'sem_pend_abort' is never used. [unusedFunction]
+
+^
+virt/virq.c:329:0: style: The function 'send_vsgi' is never used. [unusedFunction]
+
+^
+core/timer.c:210:0: style: The function 'setup_timer' is never used. [unusedFunction]
+
+^
+virt/vmcs.c:131:0: style: The function 'setup_vmcs_data' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/stage1.c:107:0: style: The function 'stage1_pgd_clear' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/stage1.c:173:0: style: The function 'stage1_pgd_populate' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/stage1.c:114:0: style: The function 'stage1_pud_clear' is never used. [unusedFunction]
+
+^
+arch/aarch64/virt/stage2.c:41:0: style: The function 'stage2_pgd_clear' is never used. [unusedFunction]
+
+^
+arch/aarch64/virt/stage2.c:107:0: style: The function 'stage2_pgd_populate' is never used. [unusedFunction]
+
+^
+core/hweight.c:42:0: style: The function 'sw_hweight16' is never used. [unusedFunction]
+
+^
+core/hweight.c:26:0: style: The function 'sw_hweight32' is never used. [unusedFunction]
+
+^
+core/hweight.c:57:0: style: The function 'sw_hweight64' is never used. [unusedFunction]
+
+^
+core/hweight.c:50:0: style: The function 'sw_hweight8' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/aarch64_sync.c:151:0: style: The function 'sync_exception_from_current_el' is never used. [unusedFunction]
+
+^
+arch/aarch64/core/aarch64_sync.c:156:0: style: The function 'sync_exception_from_lower_el' is never used. [unusedFunction]
+
+^
+arch/aarch64/virt/trap.c:28:0: style: The function 'taken_from_el1' is never used. [unusedFunction]
+
+^
+core/sched.c:375:0: style: The function 'task_exit' is never used. [unusedFunction]
+
+^
+core/task.c:166:0: style: The function 'task_exit_from_user' is never used. [unusedFunction]
+
+^
+core/task.c:175:0: style: The function 'task_return_to_user' is never used. [unusedFunction]
+
+^
+core/sched.c:211:0: style: The function 'task_suspend' is never used. [unusedFunction]
+
+^
+core/vspace.c:70:0: style: The function 'translate_va_to_pa' is never used. [unusedFunction]
+
+^
+virt/vmodule.c:118:0: style: The function 'vcpu_vmodules_deinit' is never used. [unusedFunction]
+
+^
+tools/mvm/devices/vdev.c:162:0: style: The function 'vdev_alloc_and_request_irq' is never used. [unusedFunction]
+
+^
+tools/mvm/devices/vdev.c:57:0: style: The function 'vdev_send_irq' is never used. [unusedFunction]
+
+^
+tools/mvm/devices/vdev.c:51:0: style: The function 'vdev_unmap_iomem' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_bus.c:40:0: style: The function 'vendor_show' is never used. [unusedFunction]
+
+^
+virt/virq.c:184:0: style: The function 'virq_can_request' is never used. [unusedFunction]
+
+^
+tools/mvm/devices/virtio/virtio.c:382:0: style: The function 'virtq_add_used_and_signal_n' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:82:0: style: The function 'vmbox_mask_vring_buf' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:92:0: style: The function 'vmbox_unmask_vring_buf' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:272:0: style: The function 'vmbox_virtq_add_inbuf' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:543:0: style: The function 'vmbox_virtq_add_used_and_signal_n' is never used. [unusedFunction]
+
+^
+generic/minos-linux-driver/vmbox/vmbox_virtq.c:442:0: style: The function 'vmbox_virtq_discard_desc' is never used. [unusedFunction]
+
+^
+tools/mvm/os/os_xnu.c:272:0: style: The function 'xnu_dump_cmd64' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
